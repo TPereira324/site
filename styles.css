@@ -1,10 +1,10 @@
 :root {
     --brand-primary: #8b4513;
     --brand-accent: #d2691e;
-    --surface: #fff8f0;
-    --text: #2f3b44;
-    --footer-bg: #1a120b;
-    --footer-fg: #e8d9cc;
+    --surface: #000000;
+    --text: #ffffff;
+    --footer-bg: #000000;
+    --footer-fg: #ffffff;
     --nav-bg: #000000;
     --nav-fg: #ffffff;
 }
@@ -144,8 +144,9 @@ nav a:hover {
 .hero {
     color: #fff;
     padding: 80px 20px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('images/img-20251215-wa0014.jpg');
-    background-size: cover;
+    background-image: url('images/Alpino logo BW-01.png');
+    background-repeat: no-repeat;
+    background-size: 160px auto;
     background-position: center;
 }
 
@@ -193,8 +194,8 @@ section {
 }
 
 section h2 {
-    color: var(--brand-accent);
-    border-bottom: 2px solid var(--brand-accent);
+    color: var(--text);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 10px;
 }
 
@@ -220,10 +221,10 @@ section h2 {
 }
 
 .menu-card {
-    background-color: #fff;
-    border: 1px solid #f1d2b5;
+    background-color: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 14px;
-    box-shadow: 0 8px 16px rgba(210, 105, 30, 0.15);
+    box-shadow: none;
     padding: 18px;
 }
 
@@ -238,7 +239,7 @@ section h2 {
     content: "";
     display: block;
     height: 3px;
-    background-color: var(--brand-accent);
+    background-color: var(--text);
     margin: 10px auto 0 auto;
     width: 80%;
     opacity: 0.6;
@@ -267,7 +268,7 @@ section h2 {
 }
 
 .menu-price {
-    color: var(--brand-accent);
+    color: var(--text);
     font-weight: 700;
 }
 
@@ -315,12 +316,13 @@ section h2 {
 .cta {
     max-width: 1200px;
     margin-top: 10px;
-    background: linear-gradient(90deg, var(--brand-accent), var(--brand-primary));
+    background: var(--surface);
     color: #fff;
     padding: 28px 20px;
     border-radius: 14px;
-    box-shadow: 0 8px 16px rgba(210, 105, 30, 0.25);
+    box-shadow: none;
     text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .cta-title {
@@ -342,13 +344,13 @@ section h2 {
 
 .cta-button {
     display: inline-block;
-    background: #fff;
-    color: var(--brand-accent);
+    background: transparent;
+    color: #fff;
     font-weight: 700;
     padding: 10px 16px;
     border-radius: 10px;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .cta-button:hover {
@@ -386,7 +388,7 @@ section h2 {
 }
 
 .sobre-text h3 {
-    color: var(--brand-primary);
+    color: var(--text);
     margin-top: 0;
 }
 
@@ -406,7 +408,7 @@ section h2 {
 
 .feature-icon {
     font-size: 1.6rem;
-    color: var(--brand-accent);
+    color: var(--text);
 }
 
 .feature-label {
@@ -427,11 +429,11 @@ section h2 {
 }
 
 .gallery-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
 }
 
 .gallery-item img {
@@ -458,13 +460,13 @@ section h2 {
 
 .insta-button {
     display: inline-block;
-    background: var(--brand-accent);
+    background: transparent;
     color: #fff;
     padding: 10px 18px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: 700;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .insta-button:hover {
@@ -472,17 +474,17 @@ section h2 {
 }
 
 .menu-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: var(--surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     padding: 15px;
     margin: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
 }
 
 .menu-item h3 {
     margin: 0 0 10px 0;
-    color: #8b4513;
+    color: var(--text);
 }
 
 .menu-item p {
@@ -491,7 +493,7 @@ section h2 {
 
 .price {
     font-weight: bold;
-    color: var(--brand-accent);
+    color: var(--text);
 }
 
 footer {
@@ -533,7 +535,7 @@ footer {
     width: 34px;
     height: 34px;
     border-radius: 8px;
-    background: #ffe6c9;
+    background: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -546,10 +548,10 @@ footer {
 
 .location-card {
     background: var(--surface);
-    border: 1px solid #f1d2b5;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 14px;
     padding: 20px;
-    box-shadow: 0 8px 16px rgba(210, 105, 30, 0.15);
+    box-shadow: none;
     text-align: center;
 }
 
@@ -560,12 +562,13 @@ footer {
 .location-button {
     display: inline-block;
     margin-top: 12px;
-    background: var(--brand-accent);
+    background: transparent;
     color: #fff;
     padding: 10px 16px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .site-footer {
