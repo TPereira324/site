@@ -30,17 +30,32 @@ nav {
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-nav ul {
+html { scroll-behavior: smooth; }
+
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.brand {
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+}
+
+.nav-links {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+    display: flex;
+    gap: 18px;
 }
 
-nav li {
-    display: inline;
-    margin: 0 15px;
-}
+.nav-links li { margin: 0; }
 
 nav a {
     color: white;
@@ -368,9 +383,8 @@ section h2 {
     color: #d2691e;
 }
 
-footer {
-    display: none;
-}
+footer { display: none; }
+.site-footer { display: block; }
 
 .localizacao {
     max-width: 1200px;
@@ -485,6 +499,11 @@ footer {
     text-align: center;
     color: #9bb3c2;
 }
+
+.gallery-item { transition: transform .2s ease, box-shadow .2s ease; }
+.gallery-item:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+.gallery-item img { transition: transform .3s ease; }
+.gallery-item:hover img { transform: scale(1.02); }
 
 @media (max-width: 900px) {
     .local-grid {

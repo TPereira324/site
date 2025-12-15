@@ -12,6 +12,7 @@ const parts = [
 function setupImageFallbacks() {
   const imgs = document.querySelectorAll("#galeria img");
   imgs.forEach(img => {
+    img.loading = "lazy";
     img.addEventListener("error", () => {
       if (img.dataset.fallbackTried === "1") return;
       img.dataset.fallbackTried = "1";
@@ -23,6 +24,7 @@ function setupImageFallbacks() {
         .replace(/[\u0300-\u036f]/g, "")
         .replace(/[^a-zA-Z0-9._-]/g, "-");
       const altSrc = [...segs, normalized].join("/");
+      console.warn("Imagem falhou:", src, "→ tentando:", altSrc);
       if (altSrc && altSrc !== src) img.src = altSrc;
     });
   });
