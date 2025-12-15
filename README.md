@@ -33,12 +33,4 @@ O site é composto pelas seguintes secções:
 Não é necessário servidor nem instalação adicional.
 
 ---
-
-## 📌 Observações
-
-* O site pode ser facilmente expandido com novas páginas ou funcionalidades
-* Pode ser adaptado para dispositivos móveis com melhorias de responsividade
-
----
-
 © 2025 – Pastelaria Alpino
