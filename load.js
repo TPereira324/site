@@ -10,7 +10,7 @@ const parts = [
 ];
 
 function setupImageFallbacks() {
-  const imgs = document.querySelectorAll("#galeria img");
+  const imgs = document.querySelectorAll("img");
   imgs.forEach(img => {
     img.loading = "lazy";
     img.addEventListener("error", () => {
