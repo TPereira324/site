@@ -37,13 +37,16 @@ function setupNavToggle() {
   const toggle = nav.querySelector(".nav-toggle");
   const links = nav.querySelector(".nav-links");
   if (!toggle || !links) return;
+  toggle.setAttribute("aria-expanded", "false");
   toggle.addEventListener("click", () => {
     links.classList.toggle("open");
+    const expanded = links.classList.contains("open") ? "true" : "false";
+    toggle.setAttribute("aria-expanded", expanded);
   });
-  // Close menu when a link is clicked (mobile UX)
   links.querySelectorAll("a").forEach(a => {
     a.addEventListener("click", () => {
       links.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
     });
   });
 }

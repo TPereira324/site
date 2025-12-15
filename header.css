@@ -30,6 +30,7 @@ nav {
     top: 18px;
     transform: translateX(-50%);
     text-align: center;
+    z-index: 1;
 }
 .brand img {
     height: 40px;
@@ -48,19 +49,29 @@ nav {
     list-style: none;
     padding: 12px;
     margin: 0;
-    display: none;
+    display: flex;
     gap: 12px;
     position: absolute;
     right: 10px;
-    top: 60px;
+    top: 64px;
     background: var(--nav-bg);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px;
     flex-direction: column;
     box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
 }
 .nav-links.open {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition: opacity .2s ease, transform .2s ease;
 }
 
 .nav-links li {
@@ -88,6 +99,8 @@ nav a:hover {
     position: absolute;
     right: 12px;
     top: 18px;
+    cursor: pointer;
+    z-index: 3;
 }
 
 .insta-link {
