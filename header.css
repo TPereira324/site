@@ -1,7 +1,6 @@
 nav {
     background-color: var(--nav-bg);
     padding: 22px 10px 16px 10px;
-    min-height: 80px;
     position: sticky;
     top: 8px;
     z-index: 1000;
@@ -34,7 +33,7 @@ nav {
     z-index: 1;
 }
 .brand img {
-    height: 56px;
+    height: 40px;
     width: auto;
     display: block;
     border-radius: 4px;
@@ -54,7 +53,7 @@ nav {
     gap: 12px;
     position: absolute;
     right: 10px;
-    top: 84px;
+    top: 64px;
     background: var(--nav-bg);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px;
