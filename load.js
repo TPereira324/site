@@ -38,6 +38,6 @@ window.addEventListener("DOMContentLoaded", () => {
         el.innerHTML = t;
         setupImageFallbacks();
       })
-      .catch(() => {});
+      .catch(() => { });
   });
 });
