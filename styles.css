@@ -287,8 +287,13 @@ section h2 {
     margin: 0 0 18px 0;
 }
 
-.cta .cta-title { color: #fff; }
-.cta .cta-text { color: #fff; }
+.cta .cta-title {
+    color: #fff;
+}
+
+.cta .cta-text {
+    color: #fff;
+}
 
 .cta-button {
     display: inline-block;
@@ -391,7 +396,9 @@ section h2 {
     display: block;
 }
 
-.gallery-item figcaption { display: none; }
+.gallery-item figcaption {
+    display: none;
+}
 
 .gallery-subtitle {
     text-align: center;
@@ -542,9 +549,21 @@ footer {
     border-radius: 4px;
 }
 
-.site-footer a { color: #cfe1ee; text-decoration: none; }
-.site-footer a:hover { text-decoration: underline; }
-.insta-icon { width: 18px; height: 18px; vertical-align: middle; margin-right: 6px; }
+.site-footer a {
+    color: #cfe1ee;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+.insta-icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
 
 .footer-links a {
     color: #cfe1ee;
