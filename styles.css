@@ -543,6 +543,10 @@ footer {
     border-radius: 4px;
 }
 
+.site-footer a { color: #cfe1ee; text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+.insta-icon { width: 18px; height: 18px; vertical-align: middle; margin-right: 6px; }
+
 .footer-links a {
     color: #cfe1ee;
     text-decoration: none;
