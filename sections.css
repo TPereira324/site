@@ -1,5 +1,8 @@
 .menu-section {
     max-width: 1200px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 16px;
 }
 
 .menu-title {
@@ -9,7 +12,7 @@
 
 .menu-subtitle {
     text-align: center;
-    color: #555;
+    color: var(--muted);
     margin: 8px 0 20px 0;
 }
 
@@ -121,6 +124,9 @@
 
 .sobre {
     max-width: 1000px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 16px;
 }
 
 .sobre h2 {
@@ -132,7 +138,7 @@
     text-align: center;
     max-width: 800px;
     margin: 10px auto 25px auto;
-    color: #555;
+    color: var(--muted);
 }
 
 .sobre-grid {
@@ -174,7 +180,7 @@
 }
 
 .feature-label {
-    color: #333;
+    color: var(--muted);
     font-weight: 600;
 }
 
@@ -265,6 +271,9 @@
 
 .localizacao {
     max-width: 1200px;
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 16px;
 }
 
 .local-subtitle {

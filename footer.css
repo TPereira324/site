@@ -61,8 +61,8 @@ footer {
 .footer-bottom {
     max-width: 1200px;
     margin: 20px auto 0 auto;
-    border-top: 1px solid #20303b;
+    border-top: 1px solid var(--border);
     padding-top: 12px;
     text-align: center;
-    color: #9bb3c2;
+    color: var(--muted);
 }
