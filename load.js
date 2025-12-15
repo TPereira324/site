@@ -30,6 +30,23 @@ function setupImageFallbacks() {
   });
 }
 
+function setupNavToggle() {
+  const nav = document.querySelector("#mount-nav");
+  if (!nav) return;
+  const toggle = nav.querySelector(".nav-toggle");
+  const links = nav.querySelector(".nav-links");
+  if (!toggle || !links) return;
+  toggle.addEventListener("click", () => {
+    links.classList.toggle("open");
+  });
+  // Close menu when a link is clicked (mobile UX)
+  links.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      links.classList.remove("open");
+    });
+  });
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   parts.forEach(([id, path]) => {
     const el = document.getElementById(id);
@@ -39,6 +56,7 @@ window.addEventListener("DOMContentLoaded", () => {
       .then(t => {
         el.innerHTML = t;
         setupImageFallbacks();
+        setupNavToggle();
       })
       .catch(() => { });
   });
