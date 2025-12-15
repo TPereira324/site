@@ -77,6 +77,15 @@ nav a:hover {
     font-size: 1rem;
 }
 
+.insta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.insta-link .icon { font-size: 1.1rem; }
+.insta-link svg { width: 18px; height: 18px; vertical-align: middle; }
+.insta-link .handle { opacity: 0.9; }
+
 .hero {
     color: #fff;
     padding: 80px 20px;
@@ -232,6 +241,9 @@ section h2 {
     }
     .nav-links.open {
         display: flex;
+    }
+    .insta-link .handle {
+        display: none;
     }
 }
 
