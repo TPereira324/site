@@ -27,10 +27,12 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 .nav-inner {
     max-width: 1200px;
@@ -55,7 +57,9 @@ html { scroll-behavior: smooth; }
     gap: 18px;
 }
 
-.nav-links li { margin: 0; }
+.nav-links li {
+    margin: 0;
+}
 
 nav a {
     color: white;
@@ -70,7 +74,7 @@ nav a:hover {
 .nav-toggle {
     display: none;
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.6);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     color: #fff;
     padding: 6px 10px;
     border-radius: 8px;
@@ -82,9 +86,20 @@ nav a:hover {
     align-items: center;
     gap: 6px;
 }
-.insta-link .icon { font-size: 1.1rem; }
-.insta-link svg { width: 18px; height: 18px; vertical-align: middle; }
-.insta-link .handle { opacity: 0.9; }
+
+.insta-link .icon {
+    font-size: 1.1rem;
+}
+
+.insta-link svg {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+
+.insta-link .handle {
+    opacity: 0.9;
+}
 
 .hero {
     color: #fff;
@@ -225,13 +240,16 @@ section h2 {
         grid-template-columns: 1fr;
     }
 }
+
 @media (max-width: 768px) {
     .nav-inner {
         flex-wrap: wrap;
     }
+
     .nav-toggle {
         display: inline-block;
     }
+
     .nav-links {
         display: none;
         width: 100%;
@@ -239,9 +257,11 @@ section h2 {
         gap: 12px;
         margin-top: 10px;
     }
+
     .nav-links.open {
         display: flex;
     }
+
     .insta-link .handle {
         display: none;
     }
@@ -423,8 +443,13 @@ section h2 {
     color: #d2691e;
 }
 
-footer { display: none; }
-.site-footer { display: block; }
+footer {
+    display: none;
+}
+
+.site-footer {
+    display: block;
+}
 
 .localizacao {
     max-width: 1200px;
@@ -540,10 +565,22 @@ footer { display: none; }
     color: #9bb3c2;
 }
 
-.gallery-item { transition: transform .2s ease, box-shadow .2s ease; }
-.gallery-item:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
-.gallery-item img { transition: transform .3s ease; }
-.gallery-item:hover img { transform: scale(1.02); }
+.gallery-item {
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    transition: transform .3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.02);
+}
 
 @media (max-width: 900px) {
     .local-grid {
