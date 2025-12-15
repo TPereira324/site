@@ -2,11 +2,16 @@
     --brand-primary: #8b4513;
     --brand-accent: #d2691e;
     --surface: #000000;
+    --surface-1: #0a0a0a;
+    --surface-2: #121212;
     --text: #ffffff;
     --footer-bg: #000000;
     --footer-fg: #ffffff;
     --nav-bg: #000000;
     --nav-fg: #ffffff;
+    --border: rgba(255, 255, 255, 0.18);
+    --border-strong: rgba(255, 255, 255, 0.28);
+    --muted: #cfcfcf;
 }
 
 body {
@@ -44,6 +49,6 @@ section {
 
 section h2 {
     color: var(--text);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid var(--border);
     padding-bottom: 10px;
 }
