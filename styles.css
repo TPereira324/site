@@ -388,11 +388,7 @@ section h2 {
     display: block;
 }
 
-.gallery-item figcaption {
-    padding: 10px;
-    font-size: 0.95em;
-    color: #555;
-}
+.gallery-item figcaption { display: none; }
 
 .gallery-subtitle {
     text-align: center;

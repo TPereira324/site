@@ -30,13 +30,6 @@ function setupImageFallbacks() {
   });
 }
 
-function syncGalleryCaptions() {
-  document.querySelectorAll(".gallery-item").forEach(item => {
-    const img = item.querySelector("img");
-    const cap = item.querySelector("figcaption");
-    if (img && cap) cap.textContent = img.alt || cap.textContent;
-  });
-}
 
 function setupNavToggle() {
   const nav = document.querySelector("#mount-nav");
@@ -64,7 +57,6 @@ window.addEventListener("DOMContentLoaded", () => {
       .then(t => {
         el.innerHTML = t;
         setupImageFallbacks();
-        syncGalleryCaptions();
         setupNavToggle();
       })
       .catch(() => { });
