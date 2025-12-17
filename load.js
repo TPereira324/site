@@ -44,6 +44,18 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Gallery Load More logic
+document.addEventListener('click', (e) => {
+  if (e.target && e.target.id === 'load-more-gallery') {
+    const gallery = document.querySelector('.gallery');
+    if (gallery) {
+      gallery.classList.add('expanded');
+      e.target.style.display = 'none';
+    }
+  }
+});
+
+// Event delegation for Nav Toggle to ensure it works regardless of load order
 document.addEventListener('click', (e) => {
   const toggle = e.target.closest('.nav-toggle');
   if (toggle) {
