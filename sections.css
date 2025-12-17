@@ -82,7 +82,7 @@
     max-width: 1200px;
     margin-top: 10px;
     background: linear-gradient(180deg, var(--surface-2), var(--surface-1));
-    color: var(--text);
+    color: #fff;
     padding: 28px 20px;
     border-radius: 14px;
     box-shadow: none;
