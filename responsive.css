@@ -15,10 +15,26 @@
 @media (max-width: 768px) {
     .nav-inner {
         flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .brand {
+        position: static;
+        transform: none;
+        left: auto;
+        top: auto;
+    }
+
+    .brand span {
+        white-space: nowrap;
+        font-size: 1.1rem;
     }
 
     .nav-toggle {
         display: inline-block;
+        position: static;
+        margin-left: 0;
     }
 
     .nav-links {

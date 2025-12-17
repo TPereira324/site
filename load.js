@@ -30,27 +30,6 @@ function setupImageFallbacks() {
   });
 }
 
-
-function setupNavToggle() {
-  const nav = document.querySelector("#mount-nav");
-  if (!nav) return;
-  const toggle = nav.querySelector(".nav-toggle");
-  const links = nav.querySelector(".nav-links");
-  if (!toggle || !links) return;
-  toggle.setAttribute("aria-expanded", "false");
-  toggle.addEventListener("click", () => {
-    links.classList.toggle("open");
-    const expanded = links.classList.contains("open") ? "true" : "false";
-    toggle.setAttribute("aria-expanded", expanded);
-  });
-  links.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      links.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-    });
-  });
-}
-
 window.addEventListener("DOMContentLoaded", () => {
   parts.forEach(([id, path]) => {
     const el = document.getElementById(id);
@@ -60,8 +39,28 @@ window.addEventListener("DOMContentLoaded", () => {
       .then(t => {
         el.innerHTML = t;
         setupImageFallbacks();
-        setupNavToggle();
       })
       .catch(() => { });
   });
+});
+
+document.addEventListener('click', (e) => {
+  const toggle = e.target.closest('.nav-toggle');
+  if (toggle) {
+    const nav = toggle.closest('nav') || document.querySelector('#mount-nav');
+    const links = nav.querySelector('.nav-links');
+    if (links) {
+      links.classList.toggle('open');
+      const expanded = links.classList.contains('open') ? "true" : "false";
+      toggle.setAttribute("aria-expanded", expanded);
+    }
+  }
+
+  // Close menu when clicking a link
+  if (e.target.closest('.nav-links a')) {
+    const links = e.target.closest('.nav-links');
+    const toggle = document.querySelector('.nav-toggle');
+    if (links) links.classList.remove('open');
+    if (toggle) toggle.setAttribute("aria-expanded", "false");
+  }
 });
