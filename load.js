@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
   parts.forEach(([id, path]) => {
     const el = document.getElementById(id);
     if (!el) return;
-    fetch(path)
+    fetch(path + "?v=" + new Date().getTime())
       .then(r => r.text())
       .then(t => {
         el.innerHTML = t;
