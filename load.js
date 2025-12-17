@@ -76,3 +76,66 @@ document.addEventListener('click', (e) => {
     if (toggle) toggle.setAttribute("aria-expanded", "false");
   }
 });
+
+
+const lightbox = document.createElement('div');
+lightbox.id = 'lightbox';
+lightbox.className = 'lightbox';
+lightbox.innerHTML = `
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+  <div id="lightbox-caption"></div>
+`;
+document.body.appendChild(lightbox);
+
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const closeBtn = document.querySelector('.lightbox-close');
+
+if (closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+}
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove('active');
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === "Escape" && lightbox.classList.contains('active')) {
+    lightbox.classList.remove('active');
+  }
+});
+
+document.addEventListener('click', (e) => {
+  const img = e.target.closest('.gallery-item img');
+  if (img) {
+    lightbox.classList.add('active');
+    lightboxImg.src = img.src;
+    lightboxCaption.textContent = img.alt || img.nextElementSibling?.textContent || '';
+  }
+});
+
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+setTimeout(() => {
+  const fadeElements = document.querySelectorAll('.fade-in-section');
+  fadeElements.forEach(el => observer.observe(el));
+}, 100);
+
