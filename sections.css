@@ -188,6 +188,26 @@
     text-align: center;
 }
 
+.gallery-category-title {
+    text-align: center;
+    color: var(--brand-accent);
+    margin: 30px 0 15px 0;
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gallery-category-title::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: var(--border);
+    width: 60px;
+    margin: 5px auto 0 auto;
+}
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

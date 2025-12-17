@@ -47,9 +47,9 @@ window.addEventListener("DOMContentLoaded", () => {
 // Gallery Load More logic
 document.addEventListener('click', (e) => {
   if (e.target && e.target.id === 'load-more-gallery') {
-    const gallery = document.querySelector('.gallery');
-    if (gallery) {
-      gallery.classList.add('expanded');
+    const galleries = document.querySelectorAll('.gallery');
+    if (galleries.length > 0) {
+      galleries.forEach(gallery => gallery.classList.add('expanded'));
       e.target.style.display = 'none';
     }
   }
