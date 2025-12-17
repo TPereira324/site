@@ -1,13 +1,17 @@
 nav {
     background-color: var(--nav-bg);
-    padding: 22px 10px 16px 10px;
+    padding: 10px 10px;
+    height: 120px;
     position: sticky;
     top: 8px;
     z-index: 1000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
 }
 
 .nav-inner {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -15,26 +19,27 @@ nav {
     justify-content: space-between;
     gap: 16px;
     position: relative;
+    height: 100%;
 }
 
 .brand {
     display: inline-flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
     color: var(--nav-fg);
     font-weight: 800;
     letter-spacing: 0.4px;
     position: absolute;
     left: 50%;
-    top: 18px;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     z-index: 1;
 }
 
 .brand img {
-    height: 40px;
+    height: 70px;
     width: auto;
     display: block;
     border-radius: 4px;
