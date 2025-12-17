@@ -288,6 +288,10 @@
     border-radius: 16px;
 }
 
+.localizacao h2 {
+    text-align: center;
+}
+
 .local-subtitle {
     text-align: center;
     color: var(--text);
