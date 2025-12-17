@@ -203,6 +203,14 @@
     transition: transform .2s ease, box-shadow .2s ease;
 }
 
+.gallery-item:nth-child(n+7) {
+    display: none;
+}
+
+.gallery.expanded .gallery-item:nth-child(n+7) {
+    display: block;
+}
+
 .gallery-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);

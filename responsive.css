@@ -42,12 +42,17 @@
         width: 100%;
         flex-direction: column;
         gap: 12px;
-        margin-top: 10px;
-        position: static;
-        background: transparent;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--nav-bg);
         border: 0;
-        box-shadow: none;
-        padding: 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+        padding: 20px;
+        z-index: 1000;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
     }
 
     .nav-links.open {
