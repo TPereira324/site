@@ -122,3 +122,16 @@
     opacity: 1;
     transform: none;
 }
+
+
+a[href^="tel:"],
+a[href^="mailto:"] {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+
+.site-footer a[href^="tel:"],
+.site-footer a[href^="mailto:"] {
+    color: var(--footer-fg) !important;
+}
