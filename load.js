@@ -39,10 +39,35 @@ window.addEventListener("DOMContentLoaded", () => {
       .then(t => {
         el.innerHTML = t;
         setupImageFallbacks();
+        if (id === 'mount-cardapio') setupMenuFilters();
       })
       .catch(() => { });
   });
 });
+
+function setupMenuFilters() {
+  const filters = document.querySelectorAll('.menu-filter');
+  const cards = document.querySelectorAll('.menu-card');
+
+  filters.forEach(filter => {
+    filter.addEventListener('click', () => {
+      
+      filters.forEach(f => f.classList.remove('active'));
+      
+      filter.classList.add('active');
+
+      const category = filter.dataset.filter;
+
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+}
 
 // Gallery Load More logic
 document.addEventListener('click', (e) => {

@@ -2,9 +2,17 @@
         <h2 class="menu-title">O Nosso Menu</h2>
         <p class="menu-subtitle">Consulte a nossa seleção de tostas, burgers, petiscos e muito mais</p>
 
+        <div class="menu-filters">
+                <button class="menu-filter active" data-filter="all">Todos</button>
+                <button class="menu-filter" data-filter="cafetaria">Cafetaria</button>
+                <button class="menu-filter" data-filter="bar">Bar</button>
+                <button class="menu-filter" data-filter="refeicoes">Refeições</button>
+                <button class="menu-filter" data-filter="petiscos">Petiscos</button>
+        </div>
+
         <div class="menu-grid">
                 <!-- Card 1: Cafetaria -->
-                <div class="menu-card">
+                <div class="menu-card" data-category="cafetaria">
                         <h3>CAFETARIA</h3>
                         <ul class="menu-list">
                                 <li class="menu-row"><span class="menu-name">Chás Diversos</span><span
@@ -83,7 +91,8 @@
                         </ul>
                 </div>
 
-                <div class="menu-card">
+                <!-- Card 2: Bar -->
+                <div class="menu-card" data-category="bar">
                         <h3>BAR</h3>
                         <ul class="menu-list">
                                 <li class="menu-row"><span class="menu-name">Cervejas</span><span class="menu-price">100
@@ -99,45 +108,21 @@
                                 <li class="menu-row"><span class="menu-name">Whiskey Novo</span><span
                                                 class="menu-price">150 MZN</span>
                                 </li>
-                                <li class="menu-row"><span class="menu-name">Johnnie Walker Black Label</span><span
-                                                class="menu-price">200 MZN</span></li>
-                                <li class="menu-row"><span class="menu-name">Jameson Black Barrel</span><span
-                                                class="menu-price">225
-                                                MZN</span></li>
-                                <li class="menu-row"><span class="menu-name">Jameson Select Reserve</span><span
-                                                class="menu-price">250
-                                                MZN</span></li>
-                                <li class="menu-row"><span class="menu-name">Whiskey Especial (Sob Consulta)</span><span
-                                                class="menu-price">350 - 500 MZN</span></li>
-                                <li class="menu-row"><span class="menu-name">Gordons</span><span class="menu-price">120
-                                                MZN</span></li>
-                                <li class="menu-row"><span class="menu-name">Tanqueray</span><span
+                                <li class="menu-row"><span class="menu-name">Whiskey Velho</span><span
                                                 class="menu-price">250 MZN</span>
                                 </li>
-                                <li class="menu-row"><span class="menu-name">Aguardentes/Digestivos</span><span
-                                                class="menu-price">190
-                                                MZN</span></li>
-                                <li class="menu-row"><span class="menu-name">Brandy & Rum</span><span
-                                                class="menu-price">190 MZN</span>
-                                </li>
-                                <li class="menu-row"><span class="menu-name">Tequila Branca</span><span
-                                                class="menu-price">200
-                                                MZN</span></li>
-                                <li class="menu-row"><span class="menu-name">Tequila Gold & Repousado</span><span
-                                                class="menu-price">250
-                                                MZN</span></li>
-                                <li class="menu-row"><span class="menu-name">Vinho de 250ml</span><span
-                                                class="menu-price">350
-                                                MZN</span></li>
-                                <li class="menu-row"><span class="menu-name">Taça de Vinho</span><span
-                                                class="menu-price">300 MZN</span>
+                                <li class="menu-row"><span class="menu-name">Cocktails (Sob Consulta)</span><span
+                                                class="menu-price">250 -
+                                                450 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Gin Tónico</span><span
+                                                class="menu-price">350 MZN</span>
                                 </li>
                         </ul>
                 </div>
 
-                
-                <div class="menu-card">
-                        <h3>SANDUÍCHES</h3>
+                <!-- Card 3: Refeições -->
+                <div class="menu-card full" data-category="refeicoes">
+                        <h3>REFEIÇÕES</h3>
                         <ul class="menu-list">
                                 <li class="menu-row"><span class="menu-name">Prego Soft</span><span
                                                 class="menu-price">290 MZN</span>
@@ -222,8 +207,9 @@
                         </ul>
                 </div>
 
-                <div class="menu-card">
-                        <h3>PRATOS FAST</h3>
+                <!-- Card 4: Petiscos -->
+                <div class="menu-card" data-category="petiscos">
+                        <h3>PETISCOS</h3>
                         <ul class="menu-list">
                                 <li class="menu-row"><span class="menu-name">Sopa do Dia</span><span
                                                 class="menu-price">100 MZN</span>
@@ -250,8 +236,11 @@
                                                 class="menu-price">280 MZN</span>
                                 </li>
                         </ul>
-                        <h3 style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">OMELETES
-                        </h3>
+                </div>
+
+                <!-- Card 5: Omeletes & Saladas -->
+                <div class="menu-card" data-category="refeicoes">
+                        <h3>OMELETES & SALADAS</h3>
                         <ul class="menu-list">
                                 <li class="menu-row"><span class="menu-name">Vegetais & Queijo</span><span
                                                 class="menu-price">400
