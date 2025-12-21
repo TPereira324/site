@@ -109,9 +109,25 @@
 
 .cta-buttons {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+}
+
+.cta-instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: opacity 0.2s ease;
+}
+
+.cta-instagram-link:hover {
+    opacity: 0.8;
 }
 
 .cta-button {
