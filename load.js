@@ -39,33 +39,57 @@ window.addEventListener("DOMContentLoaded", () => {
       .then(t => {
         el.innerHTML = t;
         setupImageFallbacks();
-        if (id === 'mount-cardapio') setupMenuFilters();
+        if (id === 'mount-cardapio') setupMenuInteraction();
       })
       .catch(() => { });
   });
 });
 
-function setupMenuFilters() {
-  const filters = document.querySelectorAll('.menu-filter');
-  const cards = document.querySelectorAll('.menu-card');
+function setupMenuInteraction() {
+  const cards = document.querySelectorAll('.menu-category-card');
+  const modal = document.getElementById('menu-modal');
+  const modalBody = document.getElementById('menu-modal-body');
+  const closeBtn = document.querySelector('.menu-modal-close');
 
-  filters.forEach(filter => {
-    filter.addEventListener('click', () => {
+  if (!modal) return;
+
+  // Open Modal
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const targetId = card.dataset.target;
+      const contentSource = document.getElementById('content-' + targetId);
       
-      filters.forEach(f => f.classList.remove('active'));
-      
-      filter.classList.add('active');
-
-      const category = filter.dataset.filter;
-
-      cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
+      if (contentSource) {
+        modalBody.innerHTML = contentSource.innerHTML;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      }
     });
+  });
+
+  // Close Modal Function
+  const closeModal = () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  // Close Button Click
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  // Click Outside Modal
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Escape Key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape" && modal.classList.contains('active')) {
+      closeModal();
+    }
   });
 }
 
