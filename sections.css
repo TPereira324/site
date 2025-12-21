@@ -277,12 +277,7 @@ a.cta-button[href^="tel:"] {
 }
 
 .gallery-item figcaption {
-    display: none;
-    text-align: center;
-    padding: 10px 0 5px 0;
-    color: var(--text);
-    font-weight: 600;
-    font-size: 1rem;
+    display: none !important;
 }
 
 .gallery-subtitle {
