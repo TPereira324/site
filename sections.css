@@ -217,9 +217,10 @@
 .gallery-item {
     background-color: var(--surface-2);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 14px;
     overflow: hidden;
     box-shadow: none;
+    padding: 10px;
     transition: transform .2s ease, box-shadow .2s ease;
 }
 
@@ -241,6 +242,7 @@
     height: 200px;
     object-fit: cover;
     display: block;
+    border-radius: 10px;
     transition: transform .3s ease;
 }
 
@@ -249,7 +251,12 @@
 }
 
 .gallery-item figcaption {
-    display: none;
+    display: block;
+    text-align: center;
+    padding: 10px 0 5px 0;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .gallery-subtitle {
