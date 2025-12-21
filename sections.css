@@ -107,19 +107,40 @@
     color: #fff;
 }
 
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .cta-button {
-    display: inline-block;
-    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #fff;
     color: #000 !important;
-    padding: 10px 16px;
-    border-radius: 10px;
+    padding: 12px 24px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: 700;
-    border: 0;
+    transition: transform .2s ease, background-color .2s ease;
+    border: 2px solid transparent;
 }
 
 .cta-button:hover {
-    opacity: 0.95;
+    transform: translateY(-2px);
+    background-color: #f0f0f0;
+}
+
+.instagram-button {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #fff !important;
+}
+
+.instagram-button:hover {
+    filter: brightness(1.1);
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
 .sobre {
