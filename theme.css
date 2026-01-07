@@ -9,13 +9,20 @@
     --footer-fg: #ffffff;
     --nav-bg: #261912;
     --nav-fg: #ffffff;
-    --border: rgba(255, 255, 255, 0.30);
-    --border-strong: rgba(255, 255, 255, 0.45);
+    --border: rgba(255, 255, 255, 0.15);
+    --border-strong: rgba(255, 255, 255, 0.30);
     --muted: #e0e0e0;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: var(--font-body);
     background-color: var(--surface);
     color: var(--text);
     margin: 0;
