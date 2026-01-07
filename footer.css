@@ -54,8 +54,12 @@ footer {
     text-decoration: underline;
 }
 
-.footer-hours h4 {
-    margin: 8px 0 6px 0;
+.footer-hours h4,
+.footer-links h4 {
+    margin: 0 0 15px 0;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--brand-accent);
 }
 
 .footer-bottom {

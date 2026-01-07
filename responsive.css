@@ -109,7 +109,11 @@
         height: 150px;
     }
 
-    .menu-title {
+    .menu-title,
+    .localizacao h2,
+    .cta-title,
+    .sobre h2,
+    #galeria h2 {
         font-size: 1.8rem;
     }
 
