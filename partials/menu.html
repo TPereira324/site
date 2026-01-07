@@ -1,335 +1,328 @@
 <section id="cardapio" class="menu-section">
-    <h2 class="menu-title">O Nosso Menu</h2>
-    <p class="menu-subtitle">Consulte a nossa seleção de tostas, burgers, petiscos e muito mais</p>
+        <h2 class="menu-title">O Nosso Menu</h2>
+        <p class="menu-subtitle">Consulte a nossa seleção de tostas, burgers, petiscos e muito mais</p>
 
-    <!-- Category Grid (Visual Cards) -->
-    <div class="menu-category-grid">
-        <div class="menu-category-card fade-in-section" data-target="cafetaria">
-            <img src="images/cafetaria.jpg" alt="Cafetaria">
-            <div class="menu-category-info">
-                <h3>CAFETARIA</h3>
-                <span class="menu-arrow">➜</span>
-            </div>
-        </div>
-        <div class="menu-category-card fade-in-section" data-target="bar">
-            <img src="images/bebidas-bar.jpg" alt="Bar">
-            <div class="menu-category-info">
-                <h3>BAR</h3>
-                <span class="menu-arrow">➜</span>
-            </div>
-        </div>
-        <div class="menu-category-card fade-in-section" data-target="refeicoes">
-            <img src="images/picanha.jpg" alt="Refeições">
-            <div class="menu-category-info">
-                <h3>REFEIÇÕES</h3>
-                <span class="menu-arrow">➜</span>
-            </div>
-        </div>
-        <div class="menu-category-card fade-in-section" data-target="burgers">
-            <img src="images/burger.jpg" alt="Hambúrgueres">
-            <div class="menu-category-info">
-                <h3>HAMBÚRGUERES</h3>
-                <span class="menu-arrow">➜</span>
-            </div>
-        </div>
-        <div class="menu-category-card fade-in-section" data-target="tostas">
-            <img src="images/pao-tostado-com-ovos-mexidos.jpg" alt="Tostas">
-            <div class="menu-category-info">
-                <h3>TOSTAS</h3>
-                <span class="menu-arrow">➜</span>
-            </div>
-        </div>
-        <div class="menu-category-card fade-in-section" data-target="petiscos">
-            <img src="images/mutxu.jpg" alt="Petiscos">
-            <div class="menu-category-info">
-                <h3>PETISCOS</h3>
-                <span class="menu-arrow">➜</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hidden Content Containers (Data Source for Modals) -->
-    <div class="menu-content-source" style="display: none;">
-        <!-- Cafetaria Content -->
-        <div id="content-cafetaria">
-            <div class="menu-modal-header-img"><img src="images/cafetaria.jpg" alt="Cafetaria">
-            </div>
-            <ul class="menu-list">
-                <li class="menu-row"><span class="menu-name">Chás Diversos</span><span class="menu-price">80 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Chá c/ Mel</span><span class="menu-price">100 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Chá Natural c/ Mel</span><span class="menu-price">190
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Café</span><span class="menu-price">80
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Café c/ Cheirinho</span><span class="menu-price">120
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Descafeinado</span><span class="menu-price">100 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Café c/ Pau de Canela</span><span class="menu-price">100
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Café Duplo</span><span class="menu-price">160 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Americano</span><span class="menu-price">160 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Meia de Leite</span><span class="menu-price">150 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Galão</span><span class="menu-price">180
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Copo de Leite</span><span class="menu-price">100 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Chá c/ Leite</span><span class="menu-price">170 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Cappuccino</span><span class="menu-price">190 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Chocolate Quente</span><span class="menu-price">190
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Sumo Natural</span><span class="menu-price">250 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Sumo Natural Mix</span><span class="menu-price">300
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Sumos & Refrigerantes à Vitrine</span><span
-                        class="menu-price">50 - 200 MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Água 500ml</span><span class="menu-price">50 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Água 1L</span><span class="menu-price">100
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Água das Pedras</span><span class="menu-price">100
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Água das Pedras C/Sabores</span><span
-                        class="menu-price">120 MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Redbull</span><span class="menu-price">150
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Café Gelado c/Mel & Limão</span><span
-                        class="menu-price">250 MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Café Gelado c/Leite, Mel &
-                        Canela</span><span class="menu-price">270 MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Café Gelado c/Leite
-                        Achocolatado</span><span class="menu-price">300 MZN</span></li>
-            </ul>
+        <!-- Category Grid (Visual Cards) -->
+        <div class="menu-category-grid">
+                <div class="menu-category-card" data-target="cafetaria">
+                        <img src="images/cafetaria.jpg" alt="Cafetaria">
+                        <div class="menu-category-info">
+                                <h3>CAFETARIA</h3>
+                                <span class="menu-arrow">➜</span>
+                        </div>
+                </div>
+                <div class="menu-category-card" data-target="bar">
+                        <img src="images/bebidas-bar.jpg" alt="Bar">
+                        <div class="menu-category-info">
+                                <h3>BAR</h3>
+                                <span class="menu-arrow">➜</span>
+                        </div>
+                </div>
+                <div class="menu-category-card" data-target="refeicoes">
+                        <img src="images/picanha.jpg" alt="Refeições">
+                        <div class="menu-category-info">
+                                <h3>REFEIÇÕES</h3>
+                                <span class="menu-arrow">➜</span>
+                        </div>
+                </div>
+                <div class="menu-category-card" data-target="burgers">
+                        <img src="images/burger.jpg" alt="Hambúrgueres">
+                        <div class="menu-category-info">
+                                <h3>HAMBÚRGUERES</h3>
+                                <span class="menu-arrow">➜</span>
+                        </div>
+                </div>
+                <div class="menu-category-card" data-target="tostas">
+                        <img src="images/pao-tostado-com-ovos-mexidos.jpg" alt="Tostas">
+                        <div class="menu-category-info">
+                                <h3>TOSTAS</h3>
+                                <span class="menu-arrow">➜</span>
+                        </div>
+                </div>
+                <div class="menu-category-card" data-target="petiscos">
+                        <img src="images/mutxu.jpg" alt="Petiscos">
+                        <div class="menu-category-info">
+                                <h3>PETISCOS</h3>
+                                <span class="menu-arrow">➜</span>
+                        </div>
+                </div>
         </div>
 
-        <!-- Bar Content -->
-        <div id="content-bar">
-            <div class="menu-modal-header-img"><img src="images/bebidas-bar.jpg" alt="Bar"></div>
-            <ul class="menu-list">
-                <li class="menu-row"><span class="menu-name">Cervejas</span><span class="menu-price">100
-                        - 250 MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Cidras</span><span class="menu-price">150
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Vinhos & Espumantes (Sob
-                        Consulta)</span><span class="menu-price">1200 - 4500 MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Licores/Aperitivos</span><span class="menu-price">190
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Whiskey Novo</span><span class="menu-price">150 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Johnnie Walker Black Label</span><span
-                        class="menu-price">200 MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Jameson Black Barrel</span><span class="menu-price">225
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Jameson Select Reserve</span><span class="menu-price">250
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Whisky Especial (Sob Consulta)</span><span
-                        class="menu-price">350 - 500 MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Gordons</span><span class="menu-price">120
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Tanqueray</span><span class="menu-price">250 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Aguardentes/Digestivos</span><span class="menu-price">190
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Brandy & Rum</span><span class="menu-price">190 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Tequila Branca</span><span class="menu-price">200
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Tequila Gold & Repousado</span><span class="menu-price">250
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Vinho de 250ml</span><span class="menu-price">350
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Taça de Vinho</span><span class="menu-price">350 MZN</span>
-                </li>
-            </ul>
+        <!-- Hidden Content Containers (Data Source for Modals) -->
+        <div class="menu-content-source" style="display: none;">
+                <!-- Cafetaria Content -->
+                <div id="content-cafetaria">
+                        <div class="menu-modal-header-img"><img src="images/cafetaria.jpg" alt="Cafetaria">
+                        </div>
+                        <ul class="menu-list">
+                                <li class="menu-row"><span class="menu-name">Chás Diversos</span><span
+                                                class="menu-price">80 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Chá c/ Mel</span><span
+                                                class="menu-price">100 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Chá Natural c/ Mel</span><span
+                                                class="menu-price">190 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Café</span><span class="menu-price">80
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Café c/ Cheirinho</span><span
+                                                class="menu-price">120 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Descafeinado</span><span
+                                                class="menu-price">100 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Café c/ Pau de Canela</span><span
+                                                class="menu-price">100 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Café Duplo</span><span
+                                                class="menu-price">160 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Americano</span><span
+                                                class="menu-price">160 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Meia de Leite</span><span
+                                                class="menu-price">150 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Galão</span><span class="menu-price">180
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Copo de Leite</span><span
+                                                class="menu-price">100 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Chá c/ Leite</span><span
+                                                class="menu-price">170 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Cappuccino</span><span
+                                                class="menu-price">190 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Chocolate Quente</span><span
+                                                class="menu-price">190 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Sumo Natural</span><span
+                                                class="menu-price">250 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Sumo Natural Mix</span><span
+                                                class="menu-price">300 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Sumos & Refrigerantes à Vitrine</span><span
+                                                class="menu-price">50 - 200 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Água 500ml</span><span
+                                                class="menu-price">50 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Água 1L</span><span class="menu-price">100
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Água das Pedras</span><span
+                                                class="menu-price">100 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Água das Pedras C/Sabores</span><span
+                                                class="menu-price">120 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Redbull</span><span class="menu-price">150
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Café Gelado c/Mel & Limão</span><span
+                                                class="menu-price">250 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Café Gelado c/Leite, Mel &
+                                                Canela</span><span class="menu-price">270 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Café Gelado c/Leite
+                                                Achocolatado</span><span class="menu-price">300 MZN</span></li>
+                        </ul>
+                </div>
+
+                <!-- Bar Content -->
+                <div id="content-bar">
+                        <div class="menu-modal-header-img"><img src="images/bebidas-bar.jpg" alt="Bar"></div>
+                        <ul class="menu-list">
+                                <li class="menu-row"><span class="menu-name">Cervejas</span><span class="menu-price">100
+                                                - 250 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Cidras</span><span class="menu-price">150
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Vinhos & Espumantes (Sob
+                                                Consulta)</span><span class="menu-price">1200 - 4500 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Licores/Aperitivos</span><span
+                                                class="menu-price">190 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Whiskey Novo</span><span
+                                                class="menu-price">150 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Johnnie Walker Black Label</span><span
+                                                class="menu-price">200 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Jameson Black Barrel</span><span
+                                                class="menu-price">225 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Jameson Select Reserve</span><span
+                                                class="menu-price">250 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Whisky Especial (Sob Consulta)</span><span
+                                                class="menu-price">350 - 500 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Gordons</span><span class="menu-price">120
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Tanqueray</span><span
+                                                class="menu-price">250 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Aguardentes/Digestivos</span><span
+                                                class="menu-price">190 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Brandy & Rum</span><span
+                                                class="menu-price">190 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Tequila Branca</span><span
+                                                class="menu-price">200 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Tequila Gold & Repousado</span><span
+                                                class="menu-price">250 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Vinho de 250ml</span><span
+                                                class="menu-price">350 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Taça de Vinho</span><span
+                                                class="menu-price">350 MZN</span></li>
+                        </ul>
+                </div>
+
+                <!-- Refeições Content -->
+                <div id="content-refeicoes">
+                        <div class="menu-modal-header-img"><img src="images/picanha.jpg" alt="Refeições"></div>
+
+                        <h3>SANDES & PREGOS</h3>
+                        <ul class="menu-list">
+                                <li class="menu-row"><span class="menu-name">Prego Soft</span><span
+                                                class="menu-price">310 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Prego Alpino</span><span
+                                                class="menu-price">440 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Bifana</span><span class="menu-price">400
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Sandes de Carne</span><span
+                                                class="menu-price">390 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Franguinho no Pão</span><span
+                                                class="menu-price">290 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Pão de Cereais c/ Atum</span><span
+                                                class="menu-price">550 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Pão de Cereais c/ Frango</span><span
+                                                class="menu-price">550 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Hot Dog</span><span class="menu-price">290
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Sandes de Chouriço</span><span
+                                                class="menu-price">390 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Sandes Mista</span><span
+                                                class="menu-price">250 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Sandes de Queijo</span><span
+                                                class="menu-price">190 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Sandes de Fiambre/Chourição</span><span
+                                                class="menu-price">230 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Sandes de Ovo</span><span
+                                                class="menu-price">100 MZN</span></li>
+                        </ul>
+
+                        <h3 style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">PRATOS
+                                FAST</h3>
+                        <ul class="menu-list">
+                                <li class="menu-row"><span class="menu-name">Sopa do Dia</span><span
+                                                class="menu-price">120 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Pratos do Dia</span><span
+                                                class="menu-price">350 à 750 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Prego no Prato</span><span
+                                                class="menu-price">530 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Febras à Cervejeira</span><span
+                                                class="menu-price">550 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Bifes de Frango</span><span
+                                                class="menu-price">450 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Filete de Peixe à Casa</span><span
+                                                class="menu-price">550 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">1/4 de Frango</span><span
+                                                class="menu-price">250 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Ovos Mexidos à Alpino</span><span
+                                                class="menu-price">350 MZN</span></li>
+                        </ul>
+
+                        <h3 style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">OMELETES
+                        </h3>
+                        <ul class="menu-list">
+                                <li class="menu-row"><span class="menu-name">Camarão & Queijo</span><span
+                                                class="menu-price">550 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Atum & Queijo</span><span
+                                                class="menu-price">450 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Chouriço & Queijo</span><span
+                                                class="menu-price">450 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Mista (Fiambre/Chourição)</span><span
+                                                class="menu-price">400 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Tomate e Cebola</span><span
+                                                class="menu-price">350 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Vegetais & Queijo</span><span
+                                                class="menu-price">400 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Queijo</span><span class="menu-price">300
+                                                MZN</span></li>
+                        </ul>
+
+                        <h3 style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">ESPECIAL
+                                DA CASA</h3>
+                        <ul class="menu-list">
+                                <li class="menu-row"><span class="menu-name">Sarapatel</span><span
+                                                class="menu-price">550 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Chacuti</span><span class="menu-price">550
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Língua de Boi</span><span
+                                                class="menu-price">550 MZN</span></li>
+                        </ul>
+
+                        <h3 style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">OUTROS
+                        </h3>
+                        <ul class="menu-list">
+                                <li class="menu-row"><span class="menu-name">Salada da Casa (Atum ou Frango)</span><span
+                                                class="menu-price">400 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Salada de Fruta</span><span
+                                                class="menu-price">240 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Salgados (Sob consulta)</span><span
+                                                class="menu-price">50 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Torrada</span><span class="menu-price">100
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Batata Frita</span><span
+                                                class="menu-price">100 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Extras (Sob consulta)</span><span
+                                                class="menu-price">15 à 250 MZN</span></li>
+                        </ul>
+                </div>
+
+                <!-- Burgers Content -->
+                <div id="content-burgers">
+                        <div class="menu-modal-header-img"><img src="images/burger.jpg" alt="Burgers">
+                        </div>
+                        <ul class="menu-list">
+                                <li class="menu-row"><span class="menu-name">Mix Chef</span><span class="menu-price">390
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Soft Chicken</span><span
+                                                class="menu-price">450 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Popular</span><span class="menu-price">290
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Alpino Burguer</span><span
+                                                class="menu-price">550 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Break Apetite</span><span
+                                                class="menu-price">550 MZN</span></li>
+                        </ul>
+                </div>
+
+                <!-- Tostas Content -->
+                <div id="content-tostas">
+                        <div class="menu-modal-header-img"><img src="images/pao-tostado-com-ovos-mexidos.jpg"
+                                        alt="Tostas">
+                        </div>
+                        <ul class="menu-list">
+                                <li class="menu-row"><span class="menu-name">Queijo</span><span class="menu-price">200
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Clássica</span><span class="menu-price">260
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Vegetariana</span><span
+                                                class="menu-price">310 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Carne</span><span class="menu-price">320
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Frango</span><span class="menu-price">310
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Mista</span><span class="menu-price">310
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Tuna</span><span class="menu-price">320
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Chouriço</span><span class="menu-price">350
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Especial Alpino</span><span
+                                                class="menu-price">500 MZN</span></li>
+                        </ul>
+                </div>
+
+                <!-- Petiscos & Omeletes Content -->
+                <div id="content-petiscos">
+                        <div class="menu-modal-header-img"><img src="images/mutxu.jpg" alt="Petiscos"></div>
+
+                        <h3>PETISCOS</h3>
+                        <ul class="menu-list">
+                                <li class="menu-row"><span class="menu-name">Mutxutxu</span><span class="menu-price">350
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Moelas Estufadas</span><span
+                                                class="menu-price">350 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Carne Água & Sal</span><span
+                                                class="menu-price">400 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Dobrada</span><span class="menu-price">400
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Pica-Pau</span><span class="menu-price">550
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Camarão Alhinho</span><span
+                                                class="menu-price">500 MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Chouriço</span><span class="menu-price">700
+                                                MZN</span></li>
+                                <li class="menu-row"><span class="menu-name">Mix Dobrada c/ Carne</span><span
+                                                class="menu-price">450 MZN</span></li>
+                        </ul>
+
+                </div>
         </div>
-
-        <!-- Refeições Content -->
-        <div id="content-refeicoes">
-            <div class="menu-modal-header-img"><img src="images/picanha.jpg" alt="Refeições"></div>
-
-            <h3>SANDES & PREGOS</h3>
-            <ul class="menu-list">
-                <li class="menu-row"><span class="menu-name">Prego Soft</span><span class="menu-price">310 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Prego Alpino</span><span class="menu-price">440 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Bifana</span><span class="menu-price">400
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Sandes de Carne</span><span class="menu-price">390
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Franguinho no Pão</span><span class="menu-price">290
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Pão de Cereais c/ Atum</span><span class="menu-price">550
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Pão de Cereais c/ Frango</span><span class="menu-price">550
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Hot Dog</span><span class="menu-price">290
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Sandes de Chouriço</span><span class="menu-price">390
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Sandes Mista</span><span class="menu-price">250 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Sandes de Queijo</span><span class="menu-price">190
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Sandes de Fiambre/Chourição</span><span
-                        class="menu-price">230 MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Sandes de Ovo</span><span class="menu-price">100 MZN</span>
-                </li>
-            </ul>
-
-            <h3 style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">PRATOS
-                FAST</h3>
-            <ul class="menu-list">
-                <li class="menu-row"><span class="menu-name">Sopa do Dia</span><span class="menu-price">120 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Pratos do Dia</span><span class="menu-price">350 à 750
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Prego no Prato</span><span class="menu-price">530
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Febras à Cervejeira</span><span class="menu-price">550
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Bifes de Frango</span><span class="menu-price">450
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Filete de Peixe à Casa</span><span class="menu-price">550
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">1/4 de Frango</span><span class="menu-price">250 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Ovos Mexidos à Alpino</span><span class="menu-price">350
-                        MZN</span></li>
-            </ul>
-
-            <h3 style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">OMELETES
-            </h3>
-            <ul class="menu-list">
-                <li class="menu-row"><span class="menu-name">Camarão & Queijo</span><span class="menu-price">550
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Atum & Queijo</span><span class="menu-price">450 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Chouriço & Queijo</span><span class="menu-price">450
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Mista (Fiambre/Chourição)</span><span
-                        class="menu-price">400 MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Tomate e Cebola</span><span class="menu-price">350
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Vegetais & Queijo</span><span class="menu-price">400
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Queijo</span><span class="menu-price">300
-                        MZN</span></li>
-            </ul>
-
-            <h3 style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">ESPECIAL
-                DA CASA</h3>
-            <ul class="menu-list">
-                <li class="menu-row"><span class="menu-name">Sarapatel</span><span class="menu-price">550 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Chacuti</span><span class="menu-price">550
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Língua de Boi</span><span class="menu-price">550 MZN</span>
-                </li>
-            </ul>
-
-            <h3 style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">OUTROS
-            </h3>
-            <ul class="menu-list">
-                <li class="menu-row"><span class="menu-name">Salada da Casa (Atum ou Frango)</span><span
-                        class="menu-price">400 MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Salada de Fruta</span><span class="menu-price">240
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Salgados (Sob consulta)</span><span class="menu-price">50
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Torrada</span><span class="menu-price">100
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Batata Frita</span><span class="menu-price">100 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Extras (Sob consulta)</span><span class="menu-price">15 à
-                        250 MZN</span></li>
-            </ul>
-        </div>
-
-        <!-- Burgers Content -->
-        <div id="content-burgers">
-            <div class="menu-modal-header-img"><img src="images/burger.jpg" alt="Burgers">
-            </div>
-            <ul class="menu-list">
-                <li class="menu-row"><span class="menu-name">Mix Chef</span><span class="menu-price">390
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Soft Chicken</span><span class="menu-price">450 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Popular</span><span class="menu-price">290
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Alpino Burguer</span><span class="menu-price">550
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Break Apetite</span><span class="menu-price">550 MZN</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Tostas Content -->
-        <div id="content-tostas">
-            <div class="menu-modal-header-img"><img src="images/pao-tostado-com-ovos-mexidos.jpg" alt="Tostas">
-            </div>
-            <ul class="menu-list">
-                <li class="menu-row"><span class="menu-name">Queijo</span><span class="menu-price">200
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Clássica</span><span class="menu-price">260
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Vegetariana</span><span class="menu-price">310 MZN</span>
-                </li>
-                <li class="menu-row"><span class="menu-name">Carne</span><span class="menu-price">320
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Frango</span><span class="menu-price">310
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Mista</span><span class="menu-price">310
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Tuna</span><span class="menu-price">320
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Chouriço</span><span class="menu-price">350
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Especial Alpino</span><span class="menu-price">500
-                        MZN</span></li>
-            </ul>
-        </div>
-
-        <!-- Petiscos & Omeletes Content -->
-        <div id="content-petiscos">
-            <div class="menu-modal-header-img"><img src="images/mutxu.jpg" alt="Petiscos"></div>
-
-            <h3>PETISCOS</h3>
-            <ul class="menu-list">
-                <li class="menu-row"><span class="menu-name">Mutxutxu</span><span class="menu-price">350
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Moelas Estufadas</span><span class="menu-price">350
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Carne Água & Sal</span><span class="menu-price">400
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Dobrada</span><span class="menu-price">400
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Pica-Pau</span><span class="menu-price">550
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Camarão Alhinho</span><span class="menu-price">500
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Chouriço</span><span class="menu-price">700
-                        MZN</span></li>
-                <li class="menu-row"><span class="menu-name">Mix Dobrada c/ Carne</span><span class="menu-price">450
-                        MZN</span></li>
-            </ul>
-
-        </div>
-    </div>
-
-    <!-- Modal Structure -->
-    <div id="menu-modal" class="menu-modal">
-        <div class="menu-modal-content">
-            <span class="menu-modal-close">&times;</span>
-            <div id="menu-modal-body"></div>
-        </div>
-    </div>
 </section>
