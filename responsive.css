@@ -103,36 +103,31 @@
     }
 
     .gallery {
+        display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
-        gap: 10px;
+        gap: 5px !important;
     }
 
     .gallery-item {
-        padding: 0;
-        border: none;
-        background: transparent;
-        border-radius: 12px;
+        padding: 0 !important;
+        border: none !important;
+        background: transparent !important;
+        border-radius: 8px !important;
+        min-width: 0 !important;
+        box-shadow: none !important;
     }
 
     .gallery-item img {
-        height: auto;
-        aspect-ratio: 1/1;
-        border-radius: 12px;
+        width: 100% !important;
+        height: 100% !important;
+        aspect-ratio: 1/1 !important;
+        border-radius: 8px !important;
+        object-fit: cover !important;
+        display: block !important;
     }
 
     #galeria {
-        padding: 10px;
-    }
-
-    .gallery-item {
-        padding: 0;
-    }
-
-    .gallery-item img {
-        height: auto;
-        aspect-ratio: 1/1;
-        border-radius: 14px;
-        width: 100%;
+        padding: 10px !important;
     }
 
     .menu-title,
