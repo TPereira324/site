@@ -76,6 +76,19 @@
     cursor: pointer;
 }
 
+#lightbox-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 20px;
+    font-size: 1.1rem;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

@@ -30,6 +30,26 @@ function setupImageFallbacks() {
   });
 }
 
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+function observeFadeElements(container = document) {
+    const fadeElements = container.querySelectorAll('.fade-in-section');
+    fadeElements.forEach(el => observer.observe(el));
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   parts.forEach(([id, path]) => {
     const el = document.getElementById(id);
@@ -40,9 +60,14 @@ window.addEventListener("DOMContentLoaded", () => {
         el.innerHTML = t;
         setupImageFallbacks();
         if (id === 'mount-cardapio') setupMenuInteraction();
+        observeFadeElements(el);
       })
       .catch(() => { });
   });
+
+  setTimeout(() => {
+    observeFadeElements(document);
+  }, 100);
 });
 
 function setupMenuInteraction() {
@@ -133,10 +158,12 @@ lightbox.className = 'lightbox';
 lightbox.innerHTML = `
   <span class="lightbox-close">&times;</span>
   <img class="lightbox-content" id="lightbox-img">
+  <div id="lightbox-caption"></div>
 `;
 document.body.appendChild(lightbox);
 
 const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
 const closeBtn = document.querySelector('.lightbox-close');
 
 if (closeBtn) {
@@ -162,26 +189,6 @@ document.addEventListener('click', (e) => {
   if (img) {
     lightbox.classList.add('active');
     lightboxImg.src = img.src;
+    lightboxCaption.textContent = img.alt || img.nextElementSibling?.textContent || '';
   }
 });
-
-const observerOptions = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-setTimeout(() => {
-  const fadeElements = document.querySelectorAll('.fade-in-section');
-  fadeElements.forEach(el => observer.observe(el));
-}, 100);
-
