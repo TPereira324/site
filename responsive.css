@@ -103,12 +103,25 @@
     }
 
     .gallery {
-        grid-template-columns: 1fr !important;
-        gap: 20px;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px;
+    }
+
+    .gallery-item {
+        padding: 0;
+        border: none;
+        background: transparent;
+        border-radius: 12px;
+    }
+
+    .gallery-item img {
+        height: auto;
+        aspect-ratio: 1/1;
+        border-radius: 12px;
     }
 
     #galeria {
-        padding: 15px;
+        padding: 10px;
     }
 
     .gallery-item {
