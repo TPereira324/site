@@ -146,14 +146,6 @@
         text-align: right !important;
     }
 
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item img {
-        height: 220px;
-    }
-
     .lightbox-close {
         top: 10px;
         right: 20px;
