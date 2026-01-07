@@ -298,231 +298,126 @@ a.cta-button[href^="tel:"] {
     margin-top: 0;
 }
 
-.features {
-    display: flex;
-    gap: 30px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
-
-.feature-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-}
-
-.feature-icon {
-    font-size: 1.6rem;
-    color: var(--text);
-}
-
-.feature-label {
-    color: var(--muted);
-    font-weight: 600;
-}
-
-#galeria h2 {
-    text-align: center;
-}
-
-.gallery-category-title {
-    text-align: center;
-    color: var(--brand-accent);
-    margin: 30px 0 15px 0;
-    font-size: 1.8rem;
-    position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.gallery-category-title::after {
-    content: "";
-    display: block;
-    height: 2px;
-    background-color: var(--border);
-    width: 60px;
-    margin: 5px auto 0 auto;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-}
-
-.gallery-item {
-    background-color: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: none;
-    padding: 10px;
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.gallery-item:nth-child(n+7) {
+/* Modal Styles for Menu */
+.menu-modal {
     display: none;
-}
-
-.gallery.expanded .gallery-item:nth-child(n+7) {
-    display: block;
-}
-
-.gallery-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.gallery-item img {
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    border-radius: 10px;
-    transition: transform .3s ease;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.02);
-}
-
-.gallery-item figcaption {
-    display: none !important;
-}
-
-.gallery-subtitle {
-    text-align: center;
-    color: var(--text);
-    margin: 4px 0 18px 0;
-}
-
-.instagram-follow {
-    text-align: center;
-    margin-top: 18px;
-}
-
-.insta-button {
-    display: inline-block;
-    background: transparent;
-    color: #fff;
-    padding: 10px 18px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-}
-
-.insta-button:hover {
-    opacity: 0.95;
-}
-
-.menu-item {
-    background-color: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    padding: 15px;
-    margin: 10px 0;
-    box-shadow: none;
-}
-
-.menu-item h3 {
-    margin: 0 0 10px 0;
-    color: var(--text);
-}
-
-.menu-item p {
-    margin: 5px 0;
-}
-
-.price {
-    font-weight: bold;
-    color: var(--text);
-}
-
-.localizacao {
-    max-width: 1200px;
-    background: var(--surface-1);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-}
-
-.localizacao h2 {
-    text-align: center;
-}
-
-.local-subtitle {
-    text-align: center;
-    color: var(--text);
-    margin: 4px 0 18px 0;
-}
-
-.local-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    align-items: start;
-}
-
-.contact-list h3 {
-    margin-top: 0;
-    text-align: center;
-}
-
-.contact-item {
-    display: flex;
-    gap: 12px;
-    padding: 10px 0;
-}
-
-.contact-item a {
-    color: var(--text) !important;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.contact-item a:hover {
-    color: var(--brand-accent) !important;
-    text-decoration: underline;
-}
-
-.contact-icon {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
     align-items: center;
     justify-content: center;
 }
 
-.contact-label {
-    font-weight: 700;
-    margin-bottom: 2px;
+.menu-modal.active {
+    display: flex;
+    opacity: 1;
 }
 
-.location-card {
-    background: var(--surface-2);
+.menu-modal-content {
+    background-color: var(--surface-1);
+    width: 95%;
+    max-width: 600px;
+    max-height: 90vh;
+    border-radius: 20px;
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px;
-    box-shadow: none;
-    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
 }
 
-.location-icon {
-    font-size: 1.6rem;
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(40px) scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
 }
 
-.location-button {
-    display: inline-block;
-    margin-top: 12px;
-    background: transparent;
+.menu-modal-header-img {
+    width: 100%;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.menu-modal-header-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-modal-header-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to top, var(--surface-1), transparent);
+}
+
+#menu-modal-body {
+    padding: 25px;
+}
+
+.menu-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    background: rgba(0, 0, 0, 0.6);
     color: #fff;
-    padding: 10px 16px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(4px);
+    line-height: 1;
+}
+
+.menu-modal-close:hover {
+    background: var(--brand-accent);
+    transform: rotate(90deg);
+}
+
+/* Modal Content Typography */
+#menu-modal-body h3 {
+    color: var(--brand-accent);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#menu-modal-body .menu-list {
+    margin-bottom: 25px;
+}
+
+#menu-modal-body .menu-row {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+#menu-modal-body .menu-row:last-child {
+    border-bottom: none;
 }
