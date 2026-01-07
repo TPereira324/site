@@ -133,12 +133,10 @@ lightbox.className = 'lightbox';
 lightbox.innerHTML = `
   <span class="lightbox-close">&times;</span>
   <img class="lightbox-content" id="lightbox-img">
-  <div id="lightbox-caption"></div>
 `;
 document.body.appendChild(lightbox);
 
 const lightboxImg = document.getElementById('lightbox-img');
-const lightboxCaption = document.getElementById('lightbox-caption');
 const closeBtn = document.querySelector('.lightbox-close');
 
 if (closeBtn) {
@@ -164,7 +162,6 @@ document.addEventListener('click', (e) => {
   if (img) {
     lightbox.classList.add('active');
     lightboxImg.src = img.src;
-    lightboxCaption.textContent = img.alt || img.nextElementSibling?.textContent || '';
   }
 });
 
