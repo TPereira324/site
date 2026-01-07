@@ -124,6 +124,10 @@
         padding: 15px;
         margin: 40px auto;
     }
+
+    .menu-section {
+        margin-top: 60px !important;
+    }
 }
 
 @media (max-width: 480px) {
