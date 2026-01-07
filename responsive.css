@@ -103,8 +103,12 @@
     }
 
     .gallery {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    #galeria {
+        padding: 15px;
     }
 
     .gallery-item {
