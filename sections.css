@@ -9,7 +9,7 @@
     text-align: center;
     font-size: 2.8rem;
     font-family: var(--font-heading);
-    color: var(--brand-primary);
+    color: var(--brand-accent);
     margin-bottom: 20px;
 }
 
@@ -228,7 +228,7 @@
     margin: 0 0 20px 0;
     font-size: 2.8rem;
     font-family: var(--font-heading);
-    color: var(--brand-primary);
+    color: var(--brand-accent);
 }
 
 .cta-text {
@@ -236,7 +236,7 @@
 }
 
 .cta .cta-title {
-    color: var(--brand-primary);
+    color: var(--brand-accent);
 }
 
 .cta .cta-text {
@@ -313,7 +313,7 @@ a.cta-button[href^="tel:"] {
     text-align: center;
     font-family: var(--font-heading);
     font-size: 2.8rem;
-    color: var(--brand-primary);
+    color: var(--brand-accent);
     margin-bottom: 20px;
     position: relative;
 }
@@ -416,7 +416,7 @@ a.cta-button[href^="tel:"] {
     text-align: center;
     font-family: var(--font-heading);
     font-size: 2.8rem;
-    color: var(--brand-primary);
+    color: var(--brand-accent);
     margin-bottom: 20px;
 }
 
@@ -547,7 +547,7 @@ a.cta-button[href^="tel:"] {
     text-align: center;
     font-family: var(--font-heading);
     font-size: 2.8rem;
-    color: var(--brand-primary);
+    color: var(--brand-accent);
     margin-bottom: 20px;
 }
 
