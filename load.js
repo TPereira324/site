@@ -31,9 +31,42 @@ function setupImageFallbacks() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target); // Only animate once
+      }
+    });
+  }, observerOptions);
+
+  function observeContent() {
+    const targets = document.querySelectorAll('section h2, .sobre-intro, .gallery-subtitle, .local-subtitle, .menu-category-card, .gallery-item, .feature-item, .contact-item, .sobre-image, .sobre-text');
+    targets.forEach((el, index) => {
+      el.classList.add('reveal');
+      // Add staggered delays for grids
+      if (el.classList.contains('menu-category-card') || el.classList.contains('gallery-item') || el.classList.contains('feature-item')) {
+         const delay = (index % 3) * 100; // 0ms, 100ms, 200ms
+         el.style.transitionDelay = `${delay}ms`;
+      }
+      observer.observe(el);
+    });
+  }
+
+  let loadedCount = 0;
+  const totalParts = parts.length;
+
   parts.forEach(([id, path]) => {
     const el = document.getElementById(id);
-    if (!el) return;
+    if (!el) {
+        loadedCount++;
+        return;
+    }
     fetch(path + "?v=" + new Date().getTime())
       .then(r => r.text())
       .then(t => {
@@ -41,7 +74,14 @@ window.addEventListener("DOMContentLoaded", () => {
         setupImageFallbacks();
         if (id === 'mount-cardapio') setupMenuInteraction();
       })
-      .catch(() => { });
+      .catch(() => { })
+      .finally(() => {
+        loadedCount++;
+        if (loadedCount === totalParts) {
+            // All parts loaded, initialize animations
+            setTimeout(observeContent, 100); // Small delay to ensure DOM is ready
+        }
+      });
   });
 });
 

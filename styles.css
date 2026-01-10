@@ -34,6 +34,22 @@ section h2 {
 }
 
 /* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-100 { transition-delay: 0.1s; }
+.reveal-delay-200 { transition-delay: 0.2s; }
+.reveal-delay-300 { transition-delay: 0.3s; }
+
 .fade-in-up {
     animation: fadeInUp 0.8s ease-out forwards;
     opacity: 0;
@@ -103,7 +119,7 @@ section h2 {
 .lightbox-close {
     position: absolute;
     top: 20px;
-    right: 30px;
+    right: 35px;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
@@ -119,49 +135,12 @@ section h2 {
     cursor: pointer;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
 @keyframes zoomIn {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
 }
 
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    will-change: opacity, transform;
-}
-
-.fade-in-section.is-visible {
-    opacity: 1;
-    transform: none;
-}
-
-
-a[href^="tel:"],
-a[href^="mailto:"] {
-    color: inherit !important;
-    text-decoration: none !important;
-}
-
-
-.site-footer a[href^="tel:"],
-.site-footer a[href^="mailto:"] {
-    color: var(--footer-fg) !important;
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
 }
