@@ -40,26 +40,53 @@
 
 .sobre-content-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr 1fr;
-    gap: 40px;
-    align-items: center;
+    grid-template-columns: 1fr 0.8fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+    /* Cards stretch to same height */
 }
 
 .sobre-col.text-col {
-    padding: 20px;
+    background: var(--surface-2);
+    padding: 40px 30px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sobre-col.text-col:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--brand-accent);
 }
 
 .sobre-col h3 {
     font-family: var(--font-heading);
-    font-size: 2rem;
-    color: #fff;
+    font-size: 1.8rem;
+    color: var(--brand-accent);
+    /* Changed to accent for better highlight */
     margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.sobre-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--brand-accent);
 }
 
 .sobre-col p {
     color: var(--muted);
     font-size: 1rem;
-    line-height: 1.8;
+    line-height: 1.7;
     margin-bottom: 20px;
 }
 
@@ -67,24 +94,29 @@
     position: relative;
     padding: 10px;
     border: 2px solid var(--brand-accent);
-    /* Optional framing */
-    border-radius: 50% 50% 0 0;
-    /* Try to make it look interesting like a cup or arch */
+    border-radius: 200px 200px 0 0;
+    /* Cleaner arch */
     overflow: hidden;
     height: 100%;
-    min-height: 400px;
+    max-height: 500px;
+    /* Limit height */
     display: flex;
     align-items: center;
     justify-content: center;
+    background: var(--surface-2);
 }
 
 .img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 48% 48% 0 0;
-    /* Matches wrapper */
+    border-radius: 190px 190px 0 0;
     display: block;
+    transition: transform 0.5s ease;
+}
+
+.img-wrapper:hover img {
+    transform: scale(1.05);
 }
 
 /* List Styles */
