@@ -141,6 +141,21 @@ function setupMenuInteraction() {
       if (contentSource) {
         modalBody.innerHTML = contentSource.innerHTML;
         modal.style.display = "block";
+
+        // Enable lightbox for the image inside the modal
+        const modalImg = modalBody.querySelector('img');
+        if (modalImg) {
+          modalImg.style.cursor = "zoom-in";
+          modalImg.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const lightbox = document.getElementById('gallery-lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            if (lightbox && lightboxImg) {
+              lightboxImg.src = modalImg.src;
+              lightbox.classList.add('open');
+            }
+          });
+        }
       }
     });
   });
