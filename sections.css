@@ -1,116 +1,19 @@
-/* Contact Section - Image Inspired */
-.contact-section {
-    padding-top: 60px;
-    background: transparent;
+
+/* Menu Images Section */
+.menu-images-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+    padding: 0 10px;
 }
 
-.contact-container {
-    max-width: 600px;
-    /* Constrained width like the image */
-    margin: 0 auto 60px;
-    padding: 0 20px;
-    text-align: center;
-}
-
-.contact-header {
-    margin-bottom: 40px;
-}
-
-.contact-title {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    /* Adjusted for "ENTRE EM CONTACTO" look */
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
-
-.contact-separator {
-    width: 40px;
-    height: 2px;
-    background-color: var(--brand-accent);
-    /* Or #333 if light mode, but sticking to dark theme accent */
-    margin: 0 auto;
-}
-
-.contact-info-centered {
-    margin-bottom: 40px;
-    color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.contact-info-centered p {
-    margin: 5px 0;
-}
-
-.contact-info-centered a {
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contact-info-centered a:hover {
-    color: var(--brand-accent);
-}
-
-.contact-form {
-    text-align: left;
-    /* Inputs aligned left or stretch */
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-control {
+.menu-full-img {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #444;
-    /* Subtle border for dark theme */
-    background: transparent;
-    /* Or rgba(255,255,255,0.05) */
-    color: #fff;
+    max-width: 900px;
+    height: auto;
     border-radius: 4px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: border-color 0.3s, background 0.3s;
-}
-
-.form-control:focus {
-    outline: none;
-    border-color: var(--brand-accent);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.form-control::placeholder {
-    color: #666;
-}
-
-.btn-submit {
-    width: 100%;
-    padding: 12px;
-    background: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    margin-top: 10px;
-}
-
-.btn-submit:hover {
-    background: #fff;
-    color: #000;
-}
-
-.map-full-width {
-    width: 100%;
-    filter: grayscale(100%);
-    /* Optional: makes map look cooler */
-    margin-bottom: -10px;
-    /* Fix small gap at bottom if any */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: block;
 }
