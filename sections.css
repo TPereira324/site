@@ -80,7 +80,7 @@
 }
 
 .text-col {
-    text-align: left;
+    text-align: center;
 }
 
 .text-col h3 {
@@ -95,7 +95,8 @@
 .text-col h3::after {
     content: '';
     position: absolute;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 0;
     width: 40px;
     height: 2px;
@@ -119,6 +120,7 @@
     color: var(--text-primary);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -137,6 +139,11 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.5s ease;
+}
+
+.img-wrapper:hover img {
+    transform: scale(1.05);
 }
 
 .btn-text {
@@ -305,6 +312,10 @@
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
 }
 
 .gallery-item figcaption {
