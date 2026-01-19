@@ -2,7 +2,6 @@ const parts = [
   ["mount-hero", "partials/hero.html"],
   ["mount-nav", "partials/nav.html"],
   ["mount-sobre", "partials/sobre.html"],
-  ["mount-cardapio", "partials/menu.html"],
   ["mount-cta", "partials/cta.html"],
   ["mount-galeria", "partials/galeria.html"],
   ["mount-localizacao", "partials/localizacao.html"],
