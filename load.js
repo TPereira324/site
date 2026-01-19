@@ -129,6 +129,53 @@ function setupGalleryLightbox() {
   const prevBtn = document.querySelector('.lightbox-prev');
   const nextBtn = document.querySelector('.lightbox-next');
 
+  // Load More Functionality
+  const galleries = document.querySelectorAll('.gallery');
+  const loadMoreBtn = document.getElementById('load-more-gallery');
+  const ITEMS_PER_PAGE = 8; // 2 rows of 4 images
+
+  if (galleries.length > 0 && loadMoreBtn) {
+    let hasHiddenItems = false;
+
+    // Initial State
+    galleries.forEach(gallery => {
+      const items = gallery.querySelectorAll('.gallery-item');
+      items.forEach((item, index) => {
+        if (index >= ITEMS_PER_PAGE) {
+          item.classList.add('hidden');
+          hasHiddenItems = true;
+        }
+      });
+    });
+
+    if (!hasHiddenItems) {
+      loadMoreBtn.style.display = 'none';
+    } else {
+      loadMoreBtn.style.display = 'block';
+    }
+
+    // Button Click Handler
+    loadMoreBtn.addEventListener('click', () => {
+      let stillHidden = false;
+      galleries.forEach(gallery => {
+        const hiddenItems = gallery.querySelectorAll('.gallery-item.hidden');
+        Array.from(hiddenItems).slice(0, ITEMS_PER_PAGE).forEach(item => {
+          item.classList.remove('hidden');
+        });
+
+        // Check if this gallery still has hidden items
+        if (gallery.querySelectorAll('.gallery-item.hidden').length > 0) {
+          stillHidden = true;
+        }
+      });
+
+      // If no more hidden items in ANY gallery, hide the button
+      if (!stillHidden) {
+        loadMoreBtn.style.display = 'none';
+      }
+    });
+  }
+
   if (!lightbox || galleryItems.length === 0) return;
 
   let currentIndex = 0;

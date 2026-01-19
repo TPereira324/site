@@ -65,11 +65,12 @@
 
 .sobre-content-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    align-items: start;
+    align-items: center;
+    /* Aligned to center */
 }
 
 .sobre-col {
@@ -277,6 +278,61 @@
 /* =========================================
    4. LIGHTBOX & GALLERY ADJUSTMENTS
    ========================================= */
+
+/* Gallery Grid Layout - 4 images per row as requested */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    /* Smaller gap for compact look */
+    margin-bottom: 30px;
+}
+
+.gallery-item {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1 / 1;
+    /* Ensure square images */
+    border-radius: 4px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 8px;
+    font-size: 0.9rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.gallery-item:hover figcaption {
+    transform: translateY(0);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Hidden class for Load More functionality */
+.gallery-item.hidden {
+    display: none;
+}
+
 .lightbox {
     position: fixed;
     z-index: 2000;
@@ -364,17 +420,8 @@
 }
 
 /* Gallery Hover Effects */
-.gallery-item {
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-    transform: scale(1.02);
-    z-index: 10;
-}
+/* (Replaced by more specific .gallery-item styles above, but keeping for backward compat if needed or removing duplicates) */
+/* Removing duplicate generic .gallery-item styles to avoid conflict, relying on the new block above */
 
 /* Mobile Adjustments for Sobre & Contact handled in responsive.css generally, 
    but specific overrides might be needed if not present. */
