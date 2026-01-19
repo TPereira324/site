@@ -18,6 +18,8 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     display: block;
     transition: transform 0.3s ease;
+    cursor: pointer;
+    /* Indicates clickable */
 }
 
 /* Subtle hover effect for menu images */
@@ -271,7 +273,6 @@
 
 .map-full-width {
     width: 100%;
-    filter: grayscale(100%);
     margin-bottom: -10px;
 }
 
@@ -307,6 +308,8 @@
 }
 
 .gallery-item figcaption {
+    display: none;
+    /* User requested to remove dish names */
     position: absolute;
     bottom: 0;
     left: 0;

@@ -107,7 +107,10 @@ window.addEventListener("DOMContentLoaded", () => {
       .then(t => {
         el.innerHTML = t;
         setupImageFallbacks();
-        if (id === 'mount-cardapio') setupMenuInteraction();
+        if (id === 'mount-cardapio') {
+          setupMenuInteraction();
+          setupMenuLightbox(); // Initialize menu images lightbox
+        }
         if (id === 'mount-galeria') setupGalleryLightbox();
       })
       .catch(() => { })
@@ -156,14 +159,112 @@ function setupMenuInteraction() {
   });
 }
 
-function setupGalleryLightbox() {
-  const galleryItems = document.querySelectorAll('.gallery-item');
+function setupMenuLightbox() {
+  const menuImages = document.querySelectorAll('.menu-full-img');
   const lightbox = document.getElementById('gallery-lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
-  const closeBtn = document.querySelector('.lightbox-close');
+
+  if (!lightbox || menuImages.length === 0) return;
+
+  const items = [];
+  menuImages.forEach((img, index) => {
+    items.push({
+      src: img.src,
+      alt: img.alt,
+      caption: '' // No caption for menu images
+    });
+
+    img.addEventListener('click', () => {
+      // Temporarily override the navigation for menu
+      setupLightboxNavigation(items, index);
+      lightbox.classList.add('open');
+    });
+  });
+}
+
+// Generalized Lightbox Navigation Helper
+function setupLightboxNavigation(items, initialIndex) {
+  const lightbox = document.getElementById('gallery-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
   const prevBtn = document.querySelector('.lightbox-prev');
   const nextBtn = document.querySelector('.lightbox-next');
+
+  let currentIndex = initialIndex;
+
+  function showImage(index) {
+    if (index < 0) index = items.length - 1;
+    if (index >= items.length) index = 0;
+    currentIndex = index;
+
+    lightboxImg.src = items[currentIndex].src;
+    lightboxImg.alt = items[currentIndex].alt;
+    lightboxCaption.innerText = items[currentIndex].caption || '';
+
+    // Hide caption if empty
+    lightboxCaption.style.display = items[currentIndex].caption ? 'block' : 'none';
+  }
+
+  showImage(currentIndex);
+
+  // Remove old event listeners by cloning nodes (simple trick) or managing state.
+  // Since we have multiple sources (Gallery vs Menu) using the same Lightbox buttons,
+  // we need to be careful not to stack listeners.
+  // A robust way is to replace the button elements to strip listeners.
+
+  const newPrev = prevBtn.cloneNode(true);
+  const newNext = nextBtn.cloneNode(true);
+  prevBtn.parentNode.replaceChild(newPrev, prevBtn);
+  nextBtn.parentNode.replaceChild(newNext, nextBtn);
+
+  newPrev.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage(currentIndex - 1);
+  });
+
+  newNext.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage(currentIndex + 1);
+  });
+
+  // Re-attach keyboard listener (needs to be global but context-aware, 
+  // simpler here to just update a global variable or object, but for now we rely on click)
+  // To handle keyboard correctly without stacking, we'd need a global 'currentContext' object.
+  // For this scope, let's keep it simple: We won't re-attach global keyboard listeners 
+  // because they call a hardcoded 'showImage' in setupGalleryLightbox.
+  // FIX: We need to override the keyboard behavior too.
+
+  // Let's attach a temporary handler to the lightbox element itself for keydown? 
+  // No, keydown is on document.
+  // We will assign the current 'showImage' function to a global property if we want proper keyboard support,
+  // or just accept that arrow keys might trigger the Gallery logic if we don't clean it up.
+  // Given the complexity, we'll implement a simple override on the document for this session.
+
+  window.currentLightboxNavigator = (direction) => {
+    if (direction === 'prev') showImage(currentIndex - 1);
+    if (direction === 'next') showImage(currentIndex + 1);
+  };
+}
+
+// Update Keyboard Listener to use the dynamic navigator
+document.addEventListener('keydown', (e) => {
+  const lightbox = document.getElementById('gallery-lightbox');
+  if (!lightbox || !lightbox.classList.contains('open')) return;
+
+  if (e.key === 'Escape') lightbox.classList.remove('open');
+  if (window.currentLightboxNavigator) {
+    if (e.key === 'ArrowLeft') window.currentLightboxNavigator('prev');
+    if (e.key === 'ArrowRight') window.currentLightboxNavigator('next');
+  }
+});
+
+function setupGalleryLightbox() {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('gallery-lightbox');
+  // ... elements ...
+  const closeBtn = document.querySelector('.lightbox-close');
+  // ... load more logic ...
 
   // Load More Functionality
   const galleries = document.querySelectorAll('.gallery');
@@ -214,36 +315,23 @@ function setupGalleryLightbox() {
 
   if (!lightbox || galleryItems.length === 0) return;
 
-  let currentIndex = 0;
   const items = [];
-
   galleryItems.forEach((item, index) => {
     const img = item.querySelector('img');
-    const caption = item.querySelector('figcaption');
+    // const caption = item.querySelector('figcaption'); // User requested to remove captions
     if (img) {
       items.push({
         src: img.src,
         alt: img.alt,
-        caption: caption ? caption.innerText : ''
+        caption: '' // Empty caption
       });
 
       item.addEventListener('click', () => {
-        currentIndex = index;
-        showImage(currentIndex);
+        setupLightboxNavigation(items, index); // Use shared helper
         lightbox.classList.add('open');
       });
     }
   });
-
-  function showImage(index) {
-    if (index < 0) index = items.length - 1;
-    if (index >= items.length) index = 0;
-    currentIndex = index;
-
-    lightboxImg.src = items[currentIndex].src;
-    lightboxImg.alt = items[currentIndex].alt;
-    lightboxCaption.innerText = items[currentIndex].caption;
-  }
 
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
@@ -255,27 +343,5 @@ function setupGalleryLightbox() {
     if (e.target === lightbox) {
       lightbox.classList.remove('open');
     }
-  });
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      showImage(currentIndex - 1);
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      showImage(currentIndex + 1);
-    });
-  }
-
-  // Keyboard navigation
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') lightbox.classList.remove('open');
-    if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
-    if (e.key === 'ArrowRight') showImage(currentIndex + 1);
   });
 }
