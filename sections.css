@@ -355,6 +355,15 @@
    4. LIGHTBOX & GALLERY ADJUSTMENTS
    ========================================= */
 
+/* Gallery Category Title */
+.gallery-category-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--brand-accent);
+    margin: 40px 0 20px;
+}
+
 /* Gallery Grid Layout - 4 images per row as requested */
 .gallery {
     display: grid;

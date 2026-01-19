@@ -127,50 +127,43 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function setupMenuInteraction() {
   const cards = document.querySelectorAll('.menu-category-card');
-  const modal = document.getElementById('menu-modal');
-  const modalBody = document.getElementById('menu-modal-body');
-  const closeBtn = document.querySelector('.menu-modal-close');
+  const lightbox = document.getElementById('gallery-lightbox');
 
-  if (!modal) return;
-
-  // Open Modal
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const targetId = card.dataset.target;
-      const contentSource = document.getElementById('content-' + targetId);
-      if (contentSource) {
-        modalBody.innerHTML = contentSource.innerHTML;
-        modal.style.display = "block";
-
-        // Enable lightbox for the image inside the modal
-        const modalImg = modalBody.querySelector('img');
-        if (modalImg) {
-          modalImg.style.cursor = "zoom-in";
-          modalImg.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const lightbox = document.getElementById('gallery-lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            if (lightbox && lightboxImg) {
-              lightboxImg.src = modalImg.src;
-              lightbox.classList.add('open');
-            }
-          });
-        }
-      }
+  // We need to build the items array from the hidden images
+  const menuImages = document.querySelectorAll('.menu-full-img');
+  const items = [];
+  menuImages.forEach(img => {
+    items.push({
+      src: img.src,
+      alt: img.alt,
+      caption: ''
     });
   });
 
-  // Close Modal
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      modal.style.display = "none";
-    });
-  }
+  if (!lightbox || cards.length === 0) return;
 
-  window.addEventListener('click', (event) => {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const targetId = card.dataset.target; // 'part1'
+      const contentDiv = document.getElementById('content-' + targetId);
+      const img = contentDiv ? contentDiv.querySelector('img') : null;
+
+      if (img) {
+        let index = -1;
+        // Find index of this img in menuImages
+        for (let i = 0; i < menuImages.length; i++) {
+          if (menuImages[i] === img) {
+            index = i;
+            break;
+          }
+        }
+
+        if (index !== -1) {
+          setupLightboxNavigation(items, index);
+          lightbox.classList.add('open');
+        }
+      }
+    });
   });
 }
 
