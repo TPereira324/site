@@ -1,9 +1,9 @@
 nav {
     background-color: var(--nav-bg);
-    padding: 10px 10px;
-    height: 120px;
+    padding: 10px 20px;
+    height: 90px;
     position: sticky;
-    top: 8px;
+    top: 0;
     z-index: 1000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -24,17 +24,17 @@ nav {
 
 .brand {
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 4px;
+    gap: 10px;
     color: var(--nav-fg);
     font-weight: 800;
     letter-spacing: 0.4px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    text-align: left;
     z-index: 1;
 }
 
@@ -54,32 +54,26 @@ nav {
 
 .nav-links {
     list-style: none;
-    padding: 12px;
+    padding: 0;
     margin: 0;
     display: flex;
-    gap: 12px;
-    position: absolute;
-    right: 10px;
-    top: 64px;
-    background: var(--nav-bg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    flex-direction: column;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    gap: 40px;
+    position: static;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    flex-direction: row;
+    box-shadow: none;
     z-index: 2;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-8px);
-    pointer-events: none;
-    transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    transition: none;
 }
 
 .nav-links.open {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-    transition: opacity .2s ease, transform .2s ease;
+    /* Kept for compatibility if JS toggles class, but not needed for desktop */
 }
 
 .nav-links li {
@@ -89,15 +83,20 @@ nav {
 nav a {
     color: var(--nav-fg);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: var(--brand-accent);
 }
 
 .nav-toggle {
-    display: inline-block;
+    display: none;
+    /* Hidden on desktop */
     background: transparent;
     border: 0;
     color: var(--nav-fg);
