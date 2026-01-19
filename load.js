@@ -58,6 +58,41 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Responsive Adaptation Function
+  function adaptResponsiveLayout() {
+    // 1. Calculate 1vh to fix mobile browser 100vh issue
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    // 2. Add device class to body for specific CSS targeting
+    const width = window.innerWidth;
+    document.body.classList.remove('is-mobile', 'is-tablet', 'is-desktop');
+
+    if (width <= 480) {
+      document.body.classList.add('is-mobile');
+    } else if (width <= 900) {
+      document.body.classList.add('is-tablet');
+    } else {
+      document.body.classList.add('is-desktop');
+    }
+
+    // 3. Adjust specific elements if needed
+    const lightboxImg = document.getElementById('lightbox-img');
+    if (lightboxImg) {
+      // Ensure image fits within viewport minus padding
+      lightboxImg.style.maxHeight = `calc(${vh * 100}px - 40px)`;
+    }
+  }
+
+  // Initial call
+  adaptResponsiveLayout();
+
+  // Listen for resize and orientation change
+  window.addEventListener('resize', adaptResponsiveLayout);
+  window.addEventListener('orientationchange', () => {
+    setTimeout(adaptResponsiveLayout, 100);
+  });
+
   let loadedCount = 0;
   const totalParts = parts.length;
 
@@ -81,6 +116,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (loadedCount === totalParts) {
           // All parts loaded, initialize animations
           setTimeout(observeContent, 100); // Small delay to ensure DOM is ready
+          adaptResponsiveLayout(); // Apply layout adaptations after content load
         }
       });
   });

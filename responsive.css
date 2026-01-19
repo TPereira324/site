@@ -181,4 +181,30 @@
         right: 20px;
         font-size: 30px;
     }
+
+    /* Better Gallery Grid for Small Screens */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+    }
+
+    /* Adjust font sizes for better readability */
+    p {
+        font-size: 0.95rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Extra Small Screens (e.g. iPhone SE, Galaxy Fold) */
+@media (max-width: 350px) {
+    .gallery {
+        grid-template-columns: 1fr !important;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
 }
