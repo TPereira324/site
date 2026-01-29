@@ -32,12 +32,10 @@
 
 .sobre-col .img-wrapper {
     width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
+    /* Reverted to original style as requested */
+    border-radius: 12px;
     overflow: hidden;
-    border: 5px solid var(--brand-accent);
     box-shadow: var(--shadow-lg);
-    max-width: 400px;
     margin: 0 auto;
 }
 
