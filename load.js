@@ -108,7 +108,7 @@ window.addEventListener("DOMContentLoaded", () => {
         el.innerHTML = t;
         setupImageFallbacks();
         if (id === 'mount-nav') {
-            setupMobileMenu(); // Initialize mobile menu
+            setupMobileMenu(el); // Initialize mobile menu scoped to container
         }
         if (id === 'mount-cardapio') {
           // Initialize BOTH interactions: card click AND direct image click (if any)
@@ -129,9 +129,11 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function setupMobileMenu() {
-    const toggle = document.querySelector('.nav-toggle');
-    const links = document.querySelector('.nav-links');
+function setupMobileMenu(container) {
+    // Default to document if no container provided
+    const root = container || document;
+    const toggle = root.querySelector('.nav-toggle');
+    const links = root.querySelector('.nav-links');
     
     if (toggle && links) {
         toggle.addEventListener('click', (e) => {

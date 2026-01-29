@@ -70,6 +70,7 @@
         right: auto;
         top: auto;
         margin-left: auto;
+        z-index: 1001; /* Ensure above menu links */
     }
 
     .nav-links {
@@ -172,8 +173,8 @@
 
     /* Better Gallery Grid for Small Screens */
     .gallery {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 5px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     /* Adjust font sizes for better readability */
