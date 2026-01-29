@@ -107,6 +107,9 @@ window.addEventListener("DOMContentLoaded", () => {
       .then(t => {
         el.innerHTML = t;
         setupImageFallbacks();
+        if (id === 'mount-nav') {
+            setupMobileMenu(); // Initialize mobile menu
+        }
         if (id === 'mount-cardapio') {
           // Initialize BOTH interactions: card click AND direct image click (if any)
           setupMenuInteraction();
@@ -125,6 +128,35 @@ window.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
+function setupMobileMenu() {
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    
+    if (toggle && links) {
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            links.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', links.classList.contains('open'));
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (links.classList.contains('open') && !links.contains(e.target) && !toggle.contains(e.target)) {
+                links.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close menu when clicking a link
+        links.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                links.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+}
 
 function setupMenuInteraction() {
   const cards = document.querySelectorAll('.menu-category-card');
@@ -278,7 +310,7 @@ function setupGalleryLightbox() {
   // Load More Functionality
   const galleries = document.querySelectorAll('.gallery');
   const loadMoreBtn = document.getElementById('load-more-gallery');
-  const ITEMS_PER_PAGE = 8; // 2 rows of 4 images
+  const ITEMS_PER_PAGE = 12; // Adjusted to show more initial images (2 rows of 6)
 
   if (galleries.length > 0 && loadMoreBtn) {
     let hasHiddenItems = false;
