@@ -34,3 +34,49 @@
 }
 
 /* Button styles moved to styles.css (.btn and .btn-instagram) */
+
+/* =========================================
+   MENU SECTION
+   ========================================= */
+.menu-section {
+    padding: 60px 0;
+}
+
+.menu-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.menu-category-card {
+    background: var(--surface-1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.menu-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.menu-category-card .img-wrapper {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+}
+
+.menu-category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-category-card:hover img {
+    transform: scale(1.05);
+}
