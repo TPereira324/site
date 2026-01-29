@@ -14,39 +14,27 @@
     position: relative;
     width: 100%;
     max-width: 350px;
-    background-color: #1e1e1e;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px 20px;
-    text-align: center;
     cursor: pointer;
-    transition: transform 0.3s ease;
     z-index: 2;
+    /* Removed padding, background, border to let img-wrapper handle the look */
+    background: transparent;
+    border: none;
+    padding: 0;
 }
 
-/* The "Card Behind" Effect */
-.menu-category-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--brand-accent);
-    z-index: -1;
-    transform: rotate(5deg);
-    opacity: 0.3;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
+/* The "Card Behind" Effect - Removed from card to avoid duplication with img-wrapper */
+/* .menu-category-card::before { ... } */
 
-.menu-category-card:hover {
-    transform: translateY(-5px);
-}
-
-.menu-category-card:hover::before {
+.menu-category-card:hover .img-wrapper::before {
     transform: rotate(8deg) scale(1.05);
     opacity: 0.6;
 }
 
+.menu-category-card:hover .img-wrapper img {
+    transform: scale(1.05);
+}
+
+/* Old text styles - kept just in case but not used */
 .menu-category-card h3 {
     font-family: var(--font-heading);
     font-size: 1.8rem;
