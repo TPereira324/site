@@ -296,7 +296,7 @@ function setupGalleryLightbox() {
     if (!hasHiddenItems) {
       loadMoreBtn.style.display = 'none';
     } else {
-      loadMoreBtn.style.display = 'block';
+      loadMoreBtn.style.display = '';
     }
 
     // Button Click Handler
