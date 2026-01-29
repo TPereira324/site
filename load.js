@@ -197,6 +197,7 @@ function setupMenuInteraction() {
       if (items.length > index) {
           setupLightboxNavigation(items, index);
           lightbox.classList.add('open');
+          lightbox.classList.add('menu-mode'); // Enable menu mode for larger images
       }
     });
   });
@@ -222,6 +223,7 @@ function setupMenuLightbox() {
       // Temporarily override the navigation for menu
       setupLightboxNavigation(items, index);
       lightbox.classList.add('open');
+      lightbox.classList.add('menu-mode');
     });
   });
 }
@@ -365,6 +367,7 @@ function setupGalleryLightbox() {
       item.addEventListener('click', () => {
         setupLightboxNavigation(items, index); // Use shared helper
         lightbox.classList.add('open');
+        lightbox.classList.remove('menu-mode'); // Ensure menu mode is off for gallery
       });
     }
   });

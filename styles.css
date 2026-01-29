@@ -50,66 +50,39 @@ section h2 {
     text-decoration: none;
     border-radius: 50px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border: 2px solid transparent;
+    border: none;
     cursor: pointer;
-    line-height: 1;
+    box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    background-color: #fff;
-    color: var(--brand-accent);
-    box-shadow: 0 8px 25px rgba(210, 105, 30, 0.4);
+    background-color: #c29366;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 163, 115, 0.4);
 }
 
-.btn i {
-    font-size: 1.2rem;
-}
-
-/* Instagram Variant */
 .btn-instagram {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    border: none;
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
 }
 
 .btn-instagram:hover {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     filter: brightness(1.1);
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(220, 39, 67, 0.5);
+    box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4);
 }
 
-/* Animations */
+/* =========================================
+   ANIMATIONS
+   ========================================= */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-    will-change: opacity, transform;
+    transition: all 0.8s ease-out;
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-.reveal-delay-100 {
-    transition-delay: 0.1s;
-}
-
-.reveal-delay-200 {
-    transition-delay: 0.2s;
-}
-
-.reveal-delay-300 {
-    transition-delay: 0.3s;
-}
-
-.fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
-    opacity: 0;
-    transform: translateY(20px);
 }
 
 @keyframes fadeInUp {
@@ -209,4 +182,19 @@ section h2 {
     to {
         opacity: 1
     }
+}
+
+/* Menu Mode Lightbox Overrides */
+.lightbox.menu-mode {
+    align-items: flex-start; /* Allow scrolling from top */
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.lightbox.menu-mode .lightbox-content {
+    max-height: none; /* Allow full height */
+    max-width: 95%; /* Wider width */
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
