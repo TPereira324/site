@@ -181,8 +181,8 @@ html, body {
 
     /* Better Gallery Grid for Small Screens */
     .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: 1fr; /* 1 Column for maximum image size on mobile */
+        gap: 15px;
     }
 
     /* Center all text on mobile to prevent overflow/misalignment */

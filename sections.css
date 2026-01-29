@@ -85,7 +85,7 @@
    ========================================= */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Reduced columns to make images larger */
+    grid-template-columns: repeat(3, 1fr); /* Reduced columns to 3 for larger images */
     gap: 15px;
     margin-top: 30px;
 }

@@ -312,7 +312,7 @@ function setupGalleryLightbox() {
   // Load More Functionality
   const galleries = document.querySelectorAll('.gallery');
   const loadMoreBtn = document.getElementById('load-more-gallery');
-  const ITEMS_PER_PAGE = 12; // Adjusted to show more initial images (2 rows of 6)
+  const ITEMS_PER_PAGE = 6; // Reduced to 6 to hide more initial images
 
   if (galleries.length > 0 && loadMoreBtn) {
     let hasHiddenItems = false;
@@ -336,23 +336,16 @@ function setupGalleryLightbox() {
 
     // Button Click Handler
     loadMoreBtn.addEventListener('click', () => {
-      let stillHidden = false;
       galleries.forEach(gallery => {
         const hiddenItems = gallery.querySelectorAll('.gallery-item.hidden');
-        Array.from(hiddenItems).slice(0, ITEMS_PER_PAGE).forEach(item => {
+        // Show ALL hidden items at once
+        hiddenItems.forEach(item => {
           item.classList.remove('hidden');
         });
-
-        // Check if this gallery still has hidden items
-        if (gallery.querySelectorAll('.gallery-item.hidden').length > 0) {
-          stillHidden = true;
-        }
       });
-
-      // If no more hidden items in ANY gallery, hide the button
-      if (!stillHidden) {
-        loadMoreBtn.style.display = 'none';
-      }
+      
+      // Hide button after showing all
+      loadMoreBtn.style.display = 'none';
     });
   }
 
