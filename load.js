@@ -196,7 +196,7 @@ function setupMenuInteraction() {
       // This assumes the order of cards matches the order of items
       if (items.length > index) {
           setupLightboxNavigation(items, index);
-          lightbox.classList.add('open');
+          lightbox.classList.add('active');
           lightbox.classList.add('menu-mode'); // Enable menu mode for larger images
       }
     });
@@ -222,7 +222,7 @@ function setupMenuLightbox() {
     img.addEventListener('click', () => {
       // Temporarily override the navigation for menu
       setupLightboxNavigation(items, index);
-      lightbox.classList.add('open');
+      lightbox.classList.add('active');
       lightbox.classList.add('menu-mode');
     });
   });
@@ -295,9 +295,9 @@ function setupLightboxNavigation(items, initialIndex) {
 // Update Keyboard Listener to use the dynamic navigator
 document.addEventListener('keydown', (e) => {
   const lightbox = document.getElementById('gallery-lightbox');
-  if (!lightbox || !lightbox.classList.contains('open')) return;
+  if (!lightbox || !lightbox.classList.contains('active')) return;
 
-  if (e.key === 'Escape') lightbox.classList.remove('open');
+  if (e.key === 'Escape') lightbox.classList.remove('active');
   if (window.currentLightboxNavigator) {
     if (e.key === 'ArrowLeft') window.currentLightboxNavigator('prev');
     if (e.key === 'ArrowRight') window.currentLightboxNavigator('next');
@@ -366,7 +366,7 @@ function setupGalleryLightbox() {
 
       item.addEventListener('click', () => {
         setupLightboxNavigation(items, index); // Use shared helper
-        lightbox.classList.add('open');
+        lightbox.classList.add('active');
         lightbox.classList.remove('menu-mode'); // Ensure menu mode is off for gallery
       });
     }
@@ -374,13 +374,13 @@ function setupGalleryLightbox() {
 
   if (closeBtn) {
     closeBtn.addEventListener('click', () => {
-      lightbox.classList.remove('open');
+      lightbox.classList.remove('active');
     });
   }
 
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
-      lightbox.classList.remove('open');
+      lightbox.classList.remove('active');
     }
   });
 }
