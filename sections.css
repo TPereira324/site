@@ -524,8 +524,7 @@
 
     .text-col {
         text-align: center;
-        order: 2;
-        /* Text after image on mobile usually, or keep specific order */
+        /* Removed order: 2 to restore natural DOM order (Text -> Image -> Text) */
     }
 
     .text-col h3::after {
@@ -534,10 +533,7 @@
     }
 
     .img-col {
-        order: 1;
-        /* Image first on mobile? Or second? Let's keep it middle or top. 
-                   Standard stack: History -> Image -> Vision. 
-                   If grid is 1 col, it flows naturally 1, 2, 3. */
+        /* Removed order: 1 to restore natural DOM order */
         margin: 30px 0;
     }
 
