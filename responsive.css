@@ -98,38 +98,26 @@
         display: none;
     }
 
-    .sobre-grid {
+    .sobre-grid,
+    .sobre-content-grid {
         grid-template-columns: 1fr;
     }
 
+    .sobre-col.img-col {
+        order: -1;
+        /* Image first on mobile */
+        margin-bottom: 20px;
+    }
+
     .gallery {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 5px !important;
-    }
-
-    .gallery-item {
-        padding: 0 !important;
-        margin: 0 !important;
-        border: none !important;
-        background: transparent !important;
-        border-radius: 8px !important;
-        min-width: 0 !important;
-        box-shadow: none !important;
-    }
-
-    .gallery-item img {
-        width: 100% !important;
-        height: 100% !important;
-        aspect-ratio: 1/1 !important;
-        border-radius: 8px !important;
-        object-fit: cover !important;
-        display: block !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
 
     #galeria {
-        padding: 10px !important;
+        padding: 40px 15px;
     }
+
 
     .menu-title,
     .localizacao h2,
@@ -184,8 +172,8 @@
 
     /* Better Gallery Grid for Small Screens */
     .gallery {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 8px !important;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
     }
 
     /* Adjust font sizes for better readability */
@@ -200,10 +188,6 @@
 
 /* Extra Small Screens (e.g. iPhone SE, Galaxy Fold) */
 @media (max-width: 350px) {
-    .gallery {
-        grid-template-columns: 1fr !important;
-    }
-
     .hero h1 {
         font-size: 1.5rem;
     }
