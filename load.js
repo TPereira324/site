@@ -108,8 +108,9 @@ window.addEventListener("DOMContentLoaded", () => {
         el.innerHTML = t;
         setupImageFallbacks();
         if (id === 'mount-cardapio') {
+          // Initialize BOTH interactions: card click AND direct image click (if any)
           setupMenuInteraction();
-          setupMenuLightbox(); // Initialize menu images lightbox
+          setupMenuLightbox(); 
         }
         if (id === 'mount-galeria') setupGalleryLightbox();
       })
@@ -132,36 +133,36 @@ function setupMenuInteraction() {
   // We need to build the items array from the hidden images
   const menuImages = document.querySelectorAll('.menu-full-img');
   const items = [];
-  menuImages.forEach(img => {
-    items.push({
-      src: img.src,
-      alt: img.alt,
-      caption: ''
-    });
-  });
+  
+  // If no menu-full-img found, fallback to using the images inside the cards
+  if (menuImages.length === 0) {
+     const cardImages = document.querySelectorAll('.menu-category-card img');
+     cardImages.forEach(img => {
+        items.push({
+           src: img.src,
+           alt: img.alt,
+           caption: ''
+        });
+     });
+  } else {
+      menuImages.forEach(img => {
+        items.push({
+          src: img.src,
+          alt: img.alt,
+          caption: ''
+        });
+      });
+  }
 
   if (!lightbox || cards.length === 0) return;
 
-  cards.forEach(card => {
+  cards.forEach((card, index) => {
     card.addEventListener('click', () => {
-      const targetId = card.dataset.target; // 'part1'
-      const contentDiv = document.getElementById('content-' + targetId);
-      const img = contentDiv ? contentDiv.querySelector('img') : null;
-
-      if (img) {
-        let index = -1;
-        // Find index of this img in menuImages
-        for (let i = 0; i < menuImages.length; i++) {
-          if (menuImages[i] === img) {
-            index = i;
-            break;
-          }
-        }
-
-        if (index !== -1) {
+      // Simplified logic: Just open the lightbox at the card's index
+      // This assumes the order of cards matches the order of items
+      if (items.length > index) {
           setupLightboxNavigation(items, index);
           lightbox.classList.add('open');
-        }
       }
     });
   });
