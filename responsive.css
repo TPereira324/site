@@ -104,9 +104,9 @@
     }
 
     .sobre-col.img-col {
-        order: -1;
-        /* Image first on mobile */
-        margin-bottom: 20px;
+        /* Remove order: -1 to keep natural DOM order (Text -> Image -> Text) */
+        order: initial;
+        margin: 40px auto;
     }
 
     .gallery {
