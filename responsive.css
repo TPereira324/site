@@ -82,8 +82,7 @@ html, body {
     }
 
     .nav-links {
-        display: none;
-        width: 100%;
+        display: flex;
         flex-direction: column;
         gap: 12px;
         position: absolute;
@@ -97,10 +96,18 @@ html, body {
         z-index: 1000;
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
     }
 
     .nav-links.open {
-        display: flex;
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 
     .insta-link .handle {

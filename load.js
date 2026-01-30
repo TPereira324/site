@@ -46,11 +46,11 @@ window.addEventListener("DOMContentLoaded", () => {
   }, observerOptions);
 
   function observeContent() {
-    const targets = document.querySelectorAll('section h2, .sobre-intro, .gallery-subtitle, .local-subtitle, .gallery-item, .feature-item, .contact-item, .sobre-image, .sobre-text');
+    const targets = document.querySelectorAll('section h2, .sobre-intro, .gallery-subtitle, .local-subtitle, .gallery-item, .feature-item, .contact-item, .sobre-image, .sobre-text, .menu-category-card');
     targets.forEach((el, index) => {
       el.classList.add('reveal');
       // Add staggered delays for grids
-      if (el.classList.contains('gallery-item') || el.classList.contains('feature-item')) {
+      if (el.classList.contains('gallery-item') || el.classList.contains('feature-item') || el.classList.contains('menu-category-card')) {
         const delay = (index % 3) * 100; // 0ms, 100ms, 200ms
         el.style.transitionDelay = `${delay}ms`;
       }
