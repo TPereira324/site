@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        observer.unobserve(entry.target); // Only animate once
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
@@ -49,22 +49,18 @@ window.addEventListener("DOMContentLoaded", () => {
     const targets = document.querySelectorAll('section h2, .sobre-intro, .gallery-subtitle, .local-subtitle, .gallery-item, .feature-item, .contact-item, .sobre-image, .sobre-text, .menu-category-card');
     targets.forEach((el, index) => {
       el.classList.add('reveal');
-      // Add staggered delays for grids
       if (el.classList.contains('gallery-item') || el.classList.contains('feature-item') || el.classList.contains('menu-category-card')) {
-        const delay = (index % 3) * 100; // 0ms, 100ms, 200ms
+        const delay = (index % 3) * 100;
         el.style.transitionDelay = `${delay}ms`;
       }
       observer.observe(el);
     });
   }
 
-  // Responsive Adaptation Function
   function adaptResponsiveLayout() {
-    // 1. Calculate 1vh to fix mobile browser 100vh issue
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-    // 2. Add device class to body for specific CSS targeting
     const width = window.innerWidth;
     document.body.classList.remove('is-mobile', 'is-tablet', 'is-desktop');
 
@@ -76,18 +72,14 @@ window.addEventListener("DOMContentLoaded", () => {
       document.body.classList.add('is-desktop');
     }
 
-    // 3. Adjust specific elements if needed
     const lightboxImg = document.getElementById('lightbox-img');
     if (lightboxImg) {
-      // Ensure image fits within viewport minus padding
       lightboxImg.style.maxHeight = `calc(${vh * 100}px - 40px)`;
     }
   }
 
-  // Initial call
   adaptResponsiveLayout();
 
-  // Listen for resize and orientation change
   window.addEventListener('resize', adaptResponsiveLayout);
   window.addEventListener('orientationchange', () => {
     setTimeout(adaptResponsiveLayout, 100);
@@ -108,12 +100,11 @@ window.addEventListener("DOMContentLoaded", () => {
         el.innerHTML = t;
         setupImageFallbacks();
         if (id === 'mount-nav') {
-            setupMobileMenu(el); // Initialize mobile menu scoped to container
+          setupMobileMenu(el);
         }
         if (id === 'mount-cardapio') {
-          // Initialize BOTH interactions: card click AND direct image click (if any)
           setupMenuInteraction();
-          setupMenuLightbox(); 
+          setupMenuLightbox();
         }
         if (id === 'mount-galeria') setupGalleryLightbox();
       })
@@ -121,83 +112,75 @@ window.addEventListener("DOMContentLoaded", () => {
       .finally(() => {
         loadedCount++;
         if (loadedCount === totalParts) {
-          // All parts loaded, initialize animations
-          setTimeout(observeContent, 100); // Small delay to ensure DOM is ready
-          adaptResponsiveLayout(); // Apply layout adaptations after content load
+          setTimeout(observeContent, 100);
+          adaptResponsiveLayout();
         }
       });
   });
 });
 
 function setupMobileMenu(container) {
-    // Default to document if no container provided
-    const root = container || document;
-    const toggle = root.querySelector('.nav-toggle');
-    const links = root.querySelector('.nav-links');
-    
-    if (toggle && links) {
-        toggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            links.classList.toggle('open');
-            toggle.setAttribute('aria-expanded', links.classList.contains('open'));
-        });
+  const root = container || document;
+  const toggle = root.querySelector('.nav-toggle');
+  const links = root.querySelector('.nav-links');
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (links.classList.contains('open') && !links.contains(e.target) && !toggle.contains(e.target)) {
-                links.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        });
+  if (toggle && links) {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', links.classList.contains('open'));
+    });
 
-        // Close menu when clicking a link
-        links.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                links.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-            });
-        });
-    }
+    document.addEventListener('click', (e) => {
+      if (links.classList.contains('open') && !links.contains(e.target) && !toggle.contains(e.target)) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    links.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 }
 
 function setupMenuInteraction() {
   const cards = document.querySelectorAll('.menu-category-card');
   const lightbox = document.getElementById('gallery-lightbox');
 
-  // We need to build the items array from the hidden images
   const menuImages = document.querySelectorAll('.menu-full-img');
   const items = [];
-  
-  // If no menu-full-img found, fallback to using the images inside the cards
+
   if (menuImages.length === 0) {
-     const cardImages = document.querySelectorAll('.menu-category-card img');
-     cardImages.forEach(img => {
-        items.push({
-           src: img.src,
-           alt: img.alt,
-           caption: ''
-        });
-     });
-  } else {
-      menuImages.forEach(img => {
-        items.push({
-          src: img.src,
-          alt: img.alt,
-          caption: ''
-        });
+    const cardImages = document.querySelectorAll('.menu-category-card img');
+    cardImages.forEach(img => {
+      items.push({
+        src: img.src,
+        alt: img.alt,
+        caption: ''
       });
+    });
+  } else {
+    menuImages.forEach(img => {
+      items.push({
+        src: img.src,
+        alt: img.alt,
+        caption: ''
+      });
+    });
   }
 
   if (!lightbox || cards.length === 0) return;
 
   cards.forEach((card, index) => {
     card.addEventListener('click', () => {
-      // Simplified logic: Just open the lightbox at the card's index
-      // This assumes the order of cards matches the order of items
       if (items.length > index) {
-          setupLightboxNavigation(items, index);
-          lightbox.classList.add('active');
-          lightbox.classList.add('menu-mode'); // Enable menu mode for larger images
+        setupLightboxNavigation(items, index);
+        lightbox.classList.add('active');
+        lightbox.classList.add('menu-mode');
       }
     });
   });
@@ -216,11 +199,10 @@ function setupMenuLightbox() {
     items.push({
       src: img.src,
       alt: img.alt,
-      caption: '' // No caption for menu images
+      caption: ''
     });
 
     img.addEventListener('click', () => {
-      // Temporarily override the navigation for menu
       setupLightboxNavigation(items, index);
       lightbox.classList.add('active');
       lightbox.classList.add('menu-mode');
@@ -228,7 +210,6 @@ function setupMenuLightbox() {
   });
 }
 
-// Generalized Lightbox Navigation Helper
 function setupLightboxNavigation(items, initialIndex) {
   const lightbox = document.getElementById('gallery-lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
@@ -247,16 +228,10 @@ function setupLightboxNavigation(items, initialIndex) {
     lightboxImg.alt = items[currentIndex].alt;
     lightboxCaption.innerText = items[currentIndex].caption || '';
 
-    // Hide caption if empty
     lightboxCaption.style.display = items[currentIndex].caption ? 'block' : 'none';
   }
 
   showImage(currentIndex);
-
-  // Remove old event listeners by cloning nodes (simple trick) or managing state.
-  // Since we have multiple sources (Gallery vs Menu) using the same Lightbox buttons,
-  // we need to be careful not to stack listeners.
-  // A robust way is to replace the button elements to strip listeners.
 
   const newPrev = prevBtn.cloneNode(true);
   const newNext = nextBtn.cloneNode(true);
@@ -273,26 +248,12 @@ function setupLightboxNavigation(items, initialIndex) {
     showImage(currentIndex + 1);
   });
 
-  // Re-attach keyboard listener (needs to be global but context-aware, 
-  // simpler here to just update a global variable or object, but for now we rely on click)
-  // To handle keyboard correctly without stacking, we'd need a global 'currentContext' object.
-  // For this scope, let's keep it simple: We won't re-attach global keyboard listeners 
-  // because they call a hardcoded 'showImage' in setupGalleryLightbox.
-  // FIX: We need to override the keyboard behavior too.
-
-  // Let's attach a temporary handler to the lightbox element itself for keydown? 
-  // No, keydown is on document.
-  // We will assign the current 'showImage' function to a global property if we want proper keyboard support,
-  // or just accept that arrow keys might trigger the Gallery logic if we don't clean it up.
-  // Given the complexity, we'll implement a simple override on the document for this session.
-
   window.currentLightboxNavigator = (direction) => {
     if (direction === 'prev') showImage(currentIndex - 1);
     if (direction === 'next') showImage(currentIndex + 1);
   };
 }
 
-// Update Keyboard Listener to use the dynamic navigator
 document.addEventListener('keydown', (e) => {
   const lightbox = document.getElementById('gallery-lightbox');
   if (!lightbox || !lightbox.classList.contains('active')) return;
@@ -307,19 +268,15 @@ document.addEventListener('keydown', (e) => {
 function setupGalleryLightbox() {
   const galleryItems = document.querySelectorAll('.gallery-item');
   const lightbox = document.getElementById('gallery-lightbox');
-  // ... elements ...
   const closeBtn = document.querySelector('.lightbox-close');
-  // ... load more logic ...
 
-  // Load More Functionality
   const galleries = document.querySelectorAll('.gallery');
   const loadMoreBtn = document.getElementById('load-more-gallery');
-  const ITEMS_PER_PAGE = 6; // Reduced to 6 to hide more initial images
+  const ITEMS_PER_PAGE = 6;
 
   if (galleries.length > 0 && loadMoreBtn) {
     let hasHiddenItems = false;
 
-    // Initial State
     galleries.forEach(gallery => {
       const items = gallery.querySelectorAll('.gallery-item');
       items.forEach((item, index) => {
@@ -336,17 +293,14 @@ function setupGalleryLightbox() {
       loadMoreBtn.style.display = '';
     }
 
-    // Button Click Handler
     loadMoreBtn.addEventListener('click', () => {
       galleries.forEach(gallery => {
         const hiddenItems = gallery.querySelectorAll('.gallery-item.hidden');
-        // Show ALL hidden items at once
         hiddenItems.forEach(item => {
           item.classList.remove('hidden');
         });
       });
-      
-      // Hide button after showing all
+
       loadMoreBtn.style.display = 'none';
     });
   }
@@ -356,18 +310,17 @@ function setupGalleryLightbox() {
   const items = [];
   galleryItems.forEach((item, index) => {
     const img = item.querySelector('img');
-    // const caption = item.querySelector('figcaption'); // User requested to remove captions
     if (img) {
       items.push({
         src: img.src,
         alt: img.alt,
-        caption: '' // Empty caption
+        caption: ''
       });
 
       item.addEventListener('click', () => {
-        setupLightboxNavigation(items, index); // Use shared helper
+        setupLightboxNavigation(items, index);
         lightbox.classList.add('active');
-        lightbox.classList.remove('menu-mode'); // Ensure menu mode is off for gallery
+        lightbox.classList.remove('menu-mode');
       });
     }
   });

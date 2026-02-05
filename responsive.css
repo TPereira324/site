@@ -1,5 +1,5 @@
-/* Global overflow fix */
-html, body {
+html,
+body {
     overflow-x: hidden;
     width: 100%;
     margin: 0;
@@ -78,7 +78,7 @@ html, body {
         right: auto;
         top: auto;
         margin-left: auto;
-        z-index: 1001; /* Ensure above menu links */
+        z-index: 1001;
     }
 
     .nav-links {
@@ -120,13 +120,12 @@ html, body {
     }
 
     .sobre-col.img-col {
-        /* Remove order: -1 to keep natural DOM order (Text -> Image -> Text) */
         order: initial;
         margin: 40px auto;
     }
 
     .gallery {
-        grid-template-columns: 1fr; /* 1 Column for larger images on mobile/tablet */
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
@@ -186,10 +185,9 @@ html, body {
         font-size: 30px;
     }
 
-    /* Better Gallery Grid for Small Screens */
     .gallery {
-        grid-template-columns: 1fr; /* 1 Column for maximum image size on mobile */
-        gap: 10px; /* Reduced gap */
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     #galeria {
@@ -197,24 +195,27 @@ html, body {
         padding-right: 5px;
     }
 
-    /* Center all text on mobile to prevent overflow/misalignment */
     .sobre-col.text-col,
     .hero p,
     .vision-list li,
-    p, h1, h2, h3, h4, h5, h6 {
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         text-align: center !important;
     }
 
-    /* Ensure containers don't overflow */
-    .sobre-col, 
-    .container, 
+    .sobre-col,
+    .container,
     section {
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
     }
 
-    /* Adjust font sizes for better readability */
     p {
         font-size: 0.95rem;
     }
@@ -224,7 +225,6 @@ html, body {
     }
 }
 
-/* Extra Small Screens (e.g. iPhone SE, Galaxy Fold) */
 @media (max-width: 350px) {
     .hero h1 {
         font-size: 1.5rem;

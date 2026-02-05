@@ -1,6 +1,3 @@
-/* =========================================
-   2. ABOUT SECTION
-   ========================================= */
 .sobre-new {
     padding: 60px 0;
 }
@@ -32,11 +29,11 @@
 
 .sobre-col .img-wrapper {
     width: 100%;
-    max-width: 350px; /* Limit size on all screens */
+    max-width: 350px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
-    overflow: visible; /* Allow background to show */
+    overflow: visible;
     border-radius: 0;
     box-shadow: none;
 }
@@ -59,7 +56,7 @@
     height: auto;
     display: block;
     box-shadow: var(--shadow-md);
-    transform: rotate(2deg); /* Slight rotation for the photo */
+    transform: rotate(2deg);
 }
 
 .sobre-col img {
@@ -80,12 +77,9 @@
     color: var(--text);
 }
 
-/* =========================================
-   4. GALLERY SECTION
-   ========================================= */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Reduced columns to 2 for larger images */
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin-top: 30px;
 }
@@ -143,13 +137,9 @@
     margin-top: 30px;
 }
 
-/* =========================================
-   5. CTA / ORDER SECTION
-   ========================================= */
 .cta {
     text-align: center;
     padding: 80px 20px;
-    /* Optional: subtle background to separate from footer */
     background: radial-gradient(circle at center, var(--surface-2) 0%, var(--surface) 100%);
 }
 
@@ -178,11 +168,6 @@
     flex-wrap: wrap;
 }
 
-/* Button styles moved to styles.css (.btn and .btn-instagram) */
-
-/* =========================================
-   MENU SECTION
-   ========================================= */
 .menu-section {
     padding: 60px 0;
 }
@@ -190,7 +175,7 @@
 .menu-categories-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px; /* Increased gap for rotated cards */
+    gap: 50px;
     margin-top: 40px;
     padding: 20px;
 }
@@ -231,7 +216,6 @@
 
 .menu-category-card .img-wrapper {
     width: 100%;
-    /* aspect-ratio removed to allow full menu height */
     overflow: hidden;
     border-radius: 12px;
     box-shadow: var(--shadow-md);
@@ -244,7 +228,6 @@
     width: 100%;
     height: auto;
     display: block;
-    /* Removed object-fit to show full image content */
     transition: transform 0.5s ease;
 }
 

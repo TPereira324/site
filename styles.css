@@ -37,9 +37,6 @@ section h2 {
     margin-bottom: 20px;
 }
 
-/* =========================================
-   GLOBAL BUTTON STYLES
-   ========================================= */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -75,9 +72,6 @@ section h2 {
     box-shadow: 0 6px 20px rgba(220, 39, 67, 0.4);
 }
 
-/* =========================================
-   ANIMATIONS
-   ========================================= */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -118,12 +112,10 @@ section h2 {
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Helper Classes */
 .hidden {
     display: none !important;
 }
 
-/* Lightbox */
 .lightbox {
     display: none;
     position: fixed;
@@ -193,16 +185,15 @@ section h2 {
     }
 }
 
-/* Menu Mode Lightbox Overrides */
 .lightbox.menu-mode {
-    align-items: flex-start; /* Allow scrolling from top */
+    align-items: flex-start;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
 .lightbox.menu-mode .lightbox-content {
-    max-height: none; /* Allow full height */
-    max-width: 95%; /* Wider width */
+    max-height: none;
+    max-width: 95%;
     width: auto;
     height: auto;
     object-fit: contain;
