@@ -59,7 +59,7 @@ footer {
     margin: 0 0 15px 0;
     font-family: var(--font-heading);
     font-size: 1.4rem;
-    color: var(--brand-accent);
+    color: var(--footer-fg);
 }
 
 .footer-bottom {

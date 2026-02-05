@@ -1,24 +1,35 @@
 :root {
-    --brand-primary: #8b4513;
-    --brand-accent: #d2691e;
-    --surface: #261912;
-    --surface-1: #38251a;
-    --surface-2: #4a3225;
-    --text: #ffffff;
-    --footer-bg: #1e140e;
-    --footer-fg: #ffffff;
-    --nav-bg: #261912;
-    --nav-fg: #ffffff;
-    --border: rgba(255, 255, 255, 0.15);
-    --border-strong: rgba(255, 255, 255, 0.30);
-    --muted: #e0e0e0;
-
+    /* Palette extracted from the Business Card */
+    --brand-primary: #000000;    /* Black (Logo/Main Brand) */
+    --brand-accent: #000000;     /* Black (Accents/Headings) */
+    
+    /* Backgrounds */
+    --surface: #FFF0EB;          /* Light Pink/Beige Background */
+    --surface-1: #FFFFFF;        /* White (Card Backgrounds) */
+    --surface-2: #FCE4DC;        /* Slightly darker pink for variation */
+    
+    /* Text */
+    --text: #1A1A1A;             /* Dark Gray/Black for readability */
+    --muted: #4A4A4A;            /* Medium Gray for secondary text */
+    
+    /* Footer & Navigation */
+    --footer-bg: #1A1A1A;        /* Dark footer for contrast */
+    --footer-fg: #FFF0EB;        /* Light text in footer */
+    --nav-bg: rgba(255, 240, 235, 0.95); /* Semi-transparent Pink */
+    --nav-fg: #1A1A1A;           /* Dark Nav Links */
+    
+    /* UI Elements */
+    --border: rgba(0, 0, 0, 0.1);
+    --border-strong: rgba(0, 0, 0, 0.2);
+    
+    /* Typography */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', system-ui, sans-serif;
 
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.4);
+    /* Shadows (adjusted for light theme) */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 body {
@@ -55,7 +66,7 @@ section {
 }
 
 section h2 {
-    color: var(--text);
+    color: var(--brand-accent);
     border-bottom: 2px solid var(--border);
     padding-bottom: 10px;
 }

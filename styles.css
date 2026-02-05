@@ -56,13 +56,13 @@ section h2 {
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
-    background-color: #c29366;
+    background-color: #333;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 163, 115, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-instagram {

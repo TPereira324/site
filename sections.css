@@ -150,7 +150,7 @@
     text-align: center;
     padding: 80px 20px;
     /* Optional: subtle background to separate from footer */
-    background: radial-gradient(circle at center, #2a1e16 0%, var(--bg-body) 100%);
+    background: radial-gradient(circle at center, var(--surface-2) 0%, var(--surface) 100%);
 }
 
 .cta-title {
